@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <div id="root"></div>
+</body>
+<script src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+    const rootDiv = document.getElementById("root");
+    
+    // let counter = 0;
+    // function countUp(){
+    //     counter = counter + 1;
+    //     render();
+    // }
+
+    // function render(){
+    //     ReactDOM.render(<Container/>, root);
+    // }
+
+    function App() {
+        //배열 요소별 변수명 붙이는 문법 배움
+        const [counter, setCounter] = React.useState(0);
+        const onClick = () => {
+            //setCounter(counter+1);
+            // 값이 갱신되지 않는 문제가 생길 수도 있어서 수정
+            setCounter((current) => current+1);
+            // 이렇게 쓰면 항상 최신 current 값을 받아온다.
+        }
+        return (
+            <div>
+            <h3>Seonghwa {counter}</h3>
+            <button onClick={onClick}>Click</button>
+            </div>
+        );
+    }
+   ReactDOM.render(<App />, root)
+</script>
+
+</html>

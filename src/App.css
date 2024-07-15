@@ -101,3 +101,11 @@ h3 {
 .project-preview:hover .project-preview-overlay {
   opacity: 1; /* 호버 시 투명도 조정하여 텍스트 표시 */
 }
+
+#designers p {
+  text-align: left;
+
+}
+.greenName {
+  color: green;
+}

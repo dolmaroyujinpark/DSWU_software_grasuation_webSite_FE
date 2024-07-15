@@ -8,6 +8,11 @@ import logo from './assets/logo.png'; // 로고 이미지 파일 경로
 import project1Img from './assets/project1.jpg';
 import project2Img from './assets/project2.jpg';
 
+import photo_pics1 from './assets/photo_pics1.PNG';
+import photo_pics2 from './assets/photo_pics2.PNG';
+import photo_pics3 from './assets/photo_pics3.PNG';
+import photo_pics4 from './assets/photo_pics4.PNG';
+
 function App() {
   return (
     <div className="App" id="top">
@@ -76,15 +81,21 @@ function App() {
         </section>
 
         {/* 수현 - Pictures 구역 */}
-        <section id="pics" className="section">
+        <section id="pics" className="section_pics">
           <h2>Pics</h2>
           <p>Our photo gallery.</p>
+          <div className="photo-gallery">
+          <img src={photo_pics1} alt="photo_pics1" className="photo_pics" />
+          <img src={photo_pics2} alt="photo_pics2" className="photo_pics" />
+          <img src={photo_pics3} alt="photo_pics3" className="photo_pics" />
+          <img src={photo_pics4} alt="photo_pics4" className="photo_pics" />
+          </div>
         </section>
 
         {/* 수현 - Designers 구역 */}
         <section id="designers" className="section">
           <h2>Designers</h2>
-          <p className = "greenName">2024 SOFTWARE 졸업전시 준비위원회</p>
+          <p className="greenName">2024 SOFTWARE 졸업전시 준비위원회</p>
           <p>위원장 | 안은현</p>
           <p>부위원장 | 김연수</p>
           <p>프론트엔드 | 박유진 김소정 장수현 최윤영 백수민</p>

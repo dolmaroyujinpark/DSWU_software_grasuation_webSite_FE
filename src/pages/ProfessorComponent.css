@@ -1,0 +1,45 @@
+.professor-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+  }
+  
+  .professor-title {
+    align-self: flex-start; /* 왼쪽 정렬 */
+    margin-bottom: 20px; /* 헤더와 이미지 사이의 간격을 추가 */
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: calc(50% - 400px); /* 이미지 왼쪽 라인과 맞추기 위해 마진 추가 */
+  }
+  
+  .professor-content {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 40px; /* 이미지와 동영상 사이의 빈틈을 늘림 */
+    width: 100%;
+    max-width: 800px; /* 전체 너비를 조정 */
+  }
+  
+  .professor-image {
+    flex: 2;
+    height: 400px; /* 이미지의 세로 길이 설정 */
+    max-width: 300px; /* 이미지 최대 너비를 증가 */
+    margin-right: 10px;
+    object-fit: cover; /* 이미지 비율 유지 */
+  }
+  
+  .professor-text {
+    flex: 3;
+  }
+  
+  .professor-video {
+    width: 100%;
+    max-width: 800px; /* 동영상 최대 너비 */
+  }
+  
+  .professor-video video {
+    width: 100%;
+  }
+  
+  

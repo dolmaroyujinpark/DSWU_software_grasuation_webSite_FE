@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './Header.css';
 
 function Header() {
@@ -36,17 +37,17 @@ function Header() {
 
   return (
     <header className="header light">
-      <a href="#top" className="title-link">
+      <Link to="/" className="title-link">
         <h1>Algorithm: Rhythm in Code</h1>
-      </a>
+      </Link>
       <nav className="navbar">
         <ul className="nav-links">
-          <li className="nav-item"><a href="#about">About</a></li>
-          <li className="nav-item"><a href="#projects">Projects</a></li>
-          <li className="nav-item"><a href="#professors">Professors</a></li>
-          <li className="nav-item"><a href="#guest">Guest</a></li>
-          <li className="nav-item"><a href="#pics">Pics</a></li>
-          <li className="nav-item"><a href="#designers">Design</a></li>
+          <li className="nav-item"><Link to="/#about">About</Link></li>
+          <li className="nav-item"><Link to="/#projects">Projects</Link></li>
+          <li className="nav-item"><Link to="/#professors">Professors</Link></li>
+          <li className="nav-item"><Link to="/#guest">Guest</Link></li>
+          <li className="nav-item"><Link to="/#pics">Pics</Link></li>
+          <li className="nav-item"><Link to="/#designers">Design</Link></li>
         </ul>
       </nav>
     </header>

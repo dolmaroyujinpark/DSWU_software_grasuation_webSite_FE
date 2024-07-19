@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import photo_pro1 from '../assets/photo_pics1.PNG';
+import photo_pro1 from '../assets/photo_pics2.PNG';
 import photo_pro2 from '../assets/photo_pics2.PNG';
-import photo_pro3 from '../assets/photo_pics3.PNG';
-import photo_pro4 from '../assets/photo_pics4.PNG';
-//import './Professors.css'; // CSS 파일을 추가합니다
+import photo_pro3 from '../assets/photo_pics2.PNG';
+import photo_pro4 from '../assets/photo_pics2.PNG';
+import './Professors.css'; // CSS 파일을 추가합니다
 
 function Professors() {
   return (

@@ -115,11 +115,6 @@ h3 {
   color: green;
 }
 
-.section_pics {
-  padding: 20px;
-  text-align: center;
-}
-
 .photo-gallery {
   display: flex;
   overflow-x: auto; /* 가로 스크롤 활성화 */

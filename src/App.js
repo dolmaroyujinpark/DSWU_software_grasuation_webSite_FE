@@ -93,9 +93,13 @@ function App() {
                 </section>
 
                 {/* 수현 - Pictures 구역 */}
-                <section id="pics" className="section_pics">
+                <section id="pics" className="section">
                   <h2>Pics</h2>
                   <div className="photo-gallery">
+                    <img src={photo_pics1} alt="photo_pics1" className="photo_pics" />
+                    <img src={photo_pics2} alt="photo_pics2" className="photo_pics" />
+                    <img src={photo_pics3} alt="photo_pics3" className="photo_pics" />
+                    <img src={photo_pics4} alt="photo_pics4" className="photo_pics" />
                     <img src={photo_pics1} alt="photo_pics1" className="photo_pics" />
                     <img src={photo_pics2} alt="photo_pics2" className="photo_pics" />
                     <img src={photo_pics3} alt="photo_pics3" className="photo_pics" />

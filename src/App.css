@@ -42,7 +42,12 @@ h3 {
 }
 
 .about-content {
-  text-align: center;
+  text-align: left;
+  display: flex;
+  gap: 20px; /* 왼쪽과 오른쪽 사이의 간격 */
+  width: 100%;
+  align-items: stretch; /* 각 자식 요소의 높이를 동일하게 설정 */
+  margin-top: 50px; /* 위쪽 마진을 40px로 설정 */
 }
 
 .about-content img.logo {
@@ -140,4 +145,52 @@ h3 {
   width: 300px; /* 이미지의 너비를 고정값으로 설정 */
   height: 600px; /* 이미지의 높이를 고정값으로 설정 */
   object-fit: cover; /* 이미지의 비율을 유지하면서 잘라냄 */
+}
+.about-left-content {
+  flex: 3; /* 왼쪽 컨텐츠는 3 비율 */
+  border-right: 1px solid black; /* 왼쪽과 오른쪽을 나누는 경계선 */
+}
+.about-right-content {
+  flex: 2; /* 오른쪽 컨텐츠는 2 비율 */
+}
+.about-left-content, .about-right-content {
+  padding: 20px;
+}
+
+.about-left-content p, .about-right-content p {
+  font-size: 2em; /* 텍스트 크기를 기본 크기의 2배로 설정 */
+  margin: 20px 0; /* 텍스트 간의 간격 설정 */
+}
+.designers-content {
+  display: flex;
+  gap: 20px; /* 왼쪽과 오른쪽 사이의 간격 */
+  align-items: stretch; /* 각 자식 요소의 높이를 동일하게 설정 */
+  margin-top: 40px; /* 위쪽 마진을 40px로 설정 */
+}
+
+.designers-text-content {
+  flex: 3; /* 텍스트 컨텐츠는 3 비율 */
+  padding: 20px;
+}
+
+.designers-image-content {
+  flex: 2; /* 이미지 컨텐츠는 2 비율 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  overflow: hidden; /* 이미지가 부모 요소를 넘어서지 않도록 설정 */
+}
+
+.designers-image-content img {
+  max-width: 90%; /* 이미지 최대 너비를 부모 요소의 90%로 설정 */
+  max-height: 90%; /* 이미지 최대 높이를 부모 요소의 90%로 설정 */
+  width: auto; /* 너비 자동 조절 */
+  height: auto; /* 높이 자동 조절 */
+  object-fit: contain; /* 이미지 비율 유지하며 부모 요소 안에 맞추기 */
+}
+
+.designers-text-content h2, .designers-text-content p {
+  font-size: 1.5em; /* 텍스트 크기를 기본 크기의 1.5배로 설정 */
+  margin: 10px 0; /* 텍스트 간의 간격 설정 */
 }

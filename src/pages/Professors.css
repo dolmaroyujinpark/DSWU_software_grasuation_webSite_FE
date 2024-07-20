@@ -1,8 +1,8 @@
 .photo-gallery_pro {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* 4개의 열을 동일한 너비로 설정 */
-    gap: 10px; /* 이미지 간의 간격 설정 */
-    padding: 0 10px; /* 좌우 여백 설정 */
+    gap: 100px; /* 이미지 간의 간격 설정 */
+    padding: 0 50px; /* 좌우 여백 설정 */
     box-sizing: border-box; /* 패딩을 포함하여 전체 크기 계산 */
     width: 100%; /* 전체 너비를 100%로 설정 */
   }

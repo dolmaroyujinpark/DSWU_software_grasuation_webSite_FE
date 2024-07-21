@@ -41,21 +41,6 @@ h3 {
   color: black;
 }
 
-.about-content {
-  text-align: left;
-  display: flex;
-  gap: 20px; /* 왼쪽과 오른쪽 사이의 간격 */
-  width: 100%;
-  align-items: stretch; /* 각 자식 요소의 높이를 동일하게 설정 */
-  margin-top: 50px; /* 위쪽 마진을 40px로 설정 */
-}
-
-.about-content img.logo {
-  max-width: 80%; /* 이미지 너비 최대화 */
-  height: auto; /* 이미지 높이 자동 조정 */
-  margin-top: 20px; /* 로고 위 여백 추가 */
-}
-
 /* project only css */
 .projects-grid {
   display: grid;
@@ -172,15 +157,31 @@ h3 {
   height: 600px; /* 이미지의 높이를 고정값으로 설정 */
   object-fit: cover; /* 이미지의 비율을 유지하면서 잘라냄 */
 }
+
+.about-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: left; /* 텍스트 정렬을 왼쪽으로 */
+  width: 100%; /* 전체 너비 설정 */
+}
+
+.about-content img.logo {
+  max-width: 80%; /* 이미지 너비 최대화 */
+  height: auto; /* 이미지 높이 자동 조정 */
+  margin-top: 20px; /* 로고 위 여백 추가 */
+}
 .about-left-content {
-  flex: 3; /* 왼쪽 컨텐츠는 3 비율 */
+  width: 60%; /* 왼쪽 컨텐츠는 60% */
   border-right: 1px solid black; /* 왼쪽과 오른쪽을 나누는 경계선 */
 }
 .about-right-content {
-  flex: 2; /* 오른쪽 컨텐츠는 2 비율 */
+  width: 40%; /* 오른쪽 컨텐츠는 40% */
 }
 .about-left-content, .about-right-content {
-  padding: 20px;
+  max-width: 1000px;
+  margin: 20px;
+  padding: 10px;
 }
 
 .about-left-content p, .about-right-content p {
@@ -197,6 +198,7 @@ h3 {
 .designers-text-content {
   flex: 3; /* 텍스트 컨텐츠는 3 비율 */
   padding: 20px;
+  
 }
 
 .designers-image-content {

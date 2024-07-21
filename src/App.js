@@ -59,7 +59,7 @@ function App() {
             <Route path="/" element={
               <>
                 {/* 수현 - About 구역 */}
-                < section id="about" className="section">
+                <section id="about" className="section">
                   <img src={logo} alt="Logo" className="logo" />
                   <div className="about-content">
                     <div className="about-left-content">
@@ -71,8 +71,8 @@ function App() {
                     </div>
                     <div className="about-right-content">
                       <p>Algorithm: Rhythm in Code</p>
-                      <p>"Algorithm: Rhythm in Code"는 코드를 작성하는 과정이 작곡과 유사하다는 아이디어를 반영한 슬로건입니다. 음악을 작곡할 때 음악가는 멜로디, 하모니, 리듬을 조화롭게 결합하여 아름다운 곡을 만듭니다.
-                        마찬가지로 프로그래머는 알고리즘, 데이터 구조, 로직을 조화롭게 결합하여 효율적이고 창의적인 소프트웨어를 만듭니다.</p>
+                      <p>"Algorithm: Rhythm in Code"는 코드를 작성하는 과정이 작곡과 유사하다는 아이디어를 반영한 슬로건입니다. 음악을 작곡할 때 음악가는 멜로디, 하모니, 리듬을 조화롭게 결합하여 아름다운 곡을 만드는 것과 같이
+                        프로그래머는 알고리즘, 데이터 구조, 로직을 조화롭게 결합하여 효율적이고 창의적인 소프트웨어를 만듭니다.</p>
                     </div>
                   </div>
                 </section>
@@ -145,7 +145,7 @@ function App() {
                     ))}
                   </div>
                 </section>
-                
+
                 {/* 수현 - Designers 구역 */}
                 <section id="designers" className="section">
                   <h2>Designers</h2>

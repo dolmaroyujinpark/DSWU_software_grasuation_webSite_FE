@@ -122,24 +122,50 @@ h3 {
 
 .photo-gallery {
   display: flex;
-  overflow-x: auto; /* 가로 스크롤 활성화 */
-  flex-wrap: nowrap; /* 줄 바꿈 방지 */
   justify-content: center; /* 가운데 정렬 */
-  gap: 20px; /* 사진들 사이의 간격을 설정 */
+  gap: 80px; /* 사진들 사이의 간격을 설정 */
 }
+
+.photo_pics {
+  width: 400px; /* 이미지의 너비를 고정값으로 설정 */
+  height: 700px; /* 이미지의 높이를 고정값으로 설정 */
+  object-fit: cover; /* 이미지의 비율을 유지하면서 잘라냄 */
+  flex: 0 0 auto; /* flex 아이템이 줄 바꿈되지 않도록 설정 */
+}
+
+.pagination {
+  display: flex;
+  justify-content: center; /* 가운데 정렬 */
+  margin-top: 20px; /* 위쪽 간격 설정 */
+}
+
+.pagination-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  margin: 0 5px; /* 버튼 간격 설정 */
+}
+
+.pagination-button.active {
+  color: black; /* 활성화된 버튼 색상 */
+}
+
+.pagination-button:not(.active) {
+  color: grey; /* 비활성화된 버튼 색상 */
+}
+
+.pagination-button:focus {
+  outline: none;
+}
+
+
 .photo-gallery_pro {
   display: flex;
   overflow-x: hidden; /* 가로 스크롤 활성화 */
   flex-wrap: nowrap; /* 줄 바꿈 방지 */
   justify-content: center; /* 가운데 정렬 */
   gap: 20px; /* 사진들 사이의 간격을 설정 */
-}
-
-.photo_pics {
-  width: 300px; /* 이미지의 너비를 고정값으로 설정 */
-  height: 600px; /* 이미지의 높이를 고정값으로 설정 */
-  object-fit: cover; /* 이미지의 비율을 유지하면서 잘라냄 */
-  flex: 0 0 auto; /* flex 아이템이 줄 바꿈되지 않도록 설정 */
 }
 .photo_pro {
   width: 300px; /* 이미지의 너비를 고정값으로 설정 */

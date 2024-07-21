@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -21,7 +21,34 @@ import Professor2Component from './pages/Professor2Component';
 import Professor3Component from './pages/Professor3Component';
 import Professor4Component from './pages/Professor4Component';
 
+const images = [
+  photo_pics1,
+  photo_pics2,
+  photo_pics3,
+  photo_pics4,
+  photo_pics4,
+  photo_pics3,
+  photo_pics2,
+  photo_pics1,
+  photo_pics1,
+  photo_pics2,
+  photo_pics3,
+  photo_pics4,
+];
+
 function App() {
+  const [currentPage, setCurrentPage] = useState(0);
+  const itemsPerPage = 4;
+  const totalPages = Math.ceil(images.length / itemsPerPage);
+
+  const handlePageChange = (newPage) => {
+    if (newPage >= 0 && newPage < totalPages) {
+      setCurrentPage(newPage);
+    }
+  };
+
+  const currentImages = images.slice(currentPage * itemsPerPage, (currentPage + 1) * itemsPerPage);
+
   return (
     <Router>
       <ScrollToTop />
@@ -102,17 +129,23 @@ function App() {
                 <section id="pics" className="section">
                   <h2>Pics</h2>
                   <div className="photo-gallery">
-                    <img src={photo_pics1} alt="photo_pics1" className="photo_pics" />
-                    <img src={photo_pics2} alt="photo_pics2" className="photo_pics" />
-                    <img src={photo_pics3} alt="photo_pics3" className="photo_pics" />
-                    <img src={photo_pics4} alt="photo_pics4" className="photo_pics" />
-                    <img src={photo_pics1} alt="photo_pics1" className="photo_pics" />
-                    <img src={photo_pics2} alt="photo_pics2" className="photo_pics" />
-                    <img src={photo_pics3} alt="photo_pics3" className="photo_pics" />
-                    <img src={photo_pics4} alt="photo_pics4" className="photo_pics" />
+                    {currentImages.map((image, index) => (
+                      <img src={image} alt={`photo_pics${index + 1}`} className="photo_pics" key={index} />
+                    ))}
+                  </div>
+                  <div className="pagination">
+                    {Array.from({ length: totalPages }, (_, index) => (
+                      <button
+                        key={index}
+                        className={`pagination-button ${currentPage === index ? 'active' : ''}`}
+                        onClick={() => handlePageChange(index)}
+                      >
+                        •
+                      </button>
+                    ))}
                   </div>
                 </section>
-
+                
                 {/* 수현 - Designers 구역 */}
                 <section id="designers" className="section">
                   <h2>Designers</h2>

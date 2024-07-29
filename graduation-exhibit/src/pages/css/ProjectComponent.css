@@ -1,0 +1,181 @@
+body {
+    margin: 0;
+}
+
+.AppComp {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    text-align: left;
+}
+
+.App-header h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: normal;
+    margin: 10px 40px;
+}
+
+.App-header, .header {
+    margin: 10px 0;
+    text-align: left;
+}
+
+.images {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding: 0px 40px;
+    white-space: nowrap;
+}
+
+.photo {
+    width: 30%;
+    height: 600px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+}
+
+.divider {
+    border: none;
+    height: 1px;
+    background-color: black;
+    margin: 20px 0;
+}
+
+/*내용 들어갈 박스 만들어두기*/
+.description-content {
+    max-height: none;
+    /*기본 설정으로 자동 조절*/
+    overflow-y: visible;
+    /*내용 넘어가더라도 표시*/
+    padding: 10px;
+    /*border: 1px solid #ddd;*/
+    margin: 0 40px;
+}
+
+.developer-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    flex-grow: 1;
+    justify-items: center;
+    align-items: start;
+    padding: 20px 100px;
+}
+
+.developer-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+}
+
+.developer-card .photo {
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%;
+    margin-right: 20px;
+    min-width: 200px;
+    min-height: 200px;
+    aspect-ratio: 1 / 1;
+}
+
+.info {
+    text-align: left;
+    white-space: nowrap;
+}
+
+.info p {
+    margin: 5px 0;
+    white-space: nowrap;
+}
+
+.oval-box {
+    width: 150px;
+    height: 40px;
+    background: #D9D9D9;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: 'Pretendard', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 40px;
+    text-align: center;
+    color: black;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    position: fixed; /* 화면에 고정 */
+    bottom: 20px; /* 화면 하단에서 20px 위로 */
+    right: 20px; /* 화면 오른쪽에서 20px 왼쪽으로 */
+    z-index: 1000; /* 다른 요소들보다 위에 오도록 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.oval-box:hover {
+    background: #b0b0b0;
+}
+
+.oval-box.liked .heart-icon {
+    color: rgb(235, 71, 71);
+}
+
+.heart-icon {
+    color: black;
+    margin-left: 10px; /* 아이콘과 텍스트 사이의 간격 */
+    font-size: 20px;
+}
+
+.like-count {
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.main-title {
+    font-size: 40px;
+    padding: 20px 50px;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 900px) {
+    .oval-box {
+        width: 60px;
+        height: 60px;
+        justify-content: center;
+    }
+
+    .heart-icon {
+        font-size: 30px;
+        margin: 0;
+    }
+
+    .like-count {
+        display: none;
+    }
+}
+
+@media (min-width: 901px) {
+    .oval-box {
+        width: 150px;
+        justify-content: flex-start;
+    }
+
+    .heart-icon {
+        margin-left: 40px;
+        margin-right: 10px;
+        font-size: 15px;
+    }
+
+    .like-count {
+        display: inline;
+    }
+}

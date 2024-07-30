@@ -1,0 +1,50 @@
+/* professors 섹션 스타일 */
+#professors {
+  padding: 50px 10px; /* 위아래 여백 50px, 좌우 여백 10px */
+  margin-top: 70px; /* 섹션이 네비게이션 바에 가려지지 않도록 상단 여백 추가 */
+  display: flex;
+  margin-left: 20px; /* 왼쪽 마진 20px */
+  margin-right: 40px; /* 오른쪽 마진 40px */
+  justify-content: center; /* 가운데 정렬 */
+  align-items: center; /* 세로 정렬 */
+}
+
+/* professor 사진 갤러리 */
+#professors .photo-gallery_pro {
+  display: grid; /* grid 레이아웃 사용 */
+  gap: 10px; /* 사진들 사이의 간격 설정 */
+  max-width: 100%;
+  width: 100%; /* 부모 요소의 너비에 맞추기 */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 반응형 열 설정 */
+  grid-auto-rows: minmax(200px, auto); /* 자동 높이 조정 */
+  padding: 10px; /* 내부 여백 추가 */
+  box-sizing: border-box; /* padding을 요소의 전체 너비에 포함 */
+}
+
+/* 각 사진 */
+#professors .photo_pro {
+  width: 100%; /* 최대 너비를 100%로 설정 */
+  height: 100%; /* 그리드 셀 높이에 맞춰서 100%로 설정 */
+  object-fit: cover; /* 이미지 비율 유지 */
+}
+
+/* 화면 크기 대 */
+@media (min-width: 900px) {
+  #professors .photo-gallery_pro {
+    grid-template-columns: repeat(4, 1fr); /* 4개의 열로 설정 */
+  }
+}
+
+/* 화면 크기 중 */
+@media (max-width: 900px) and (min-width: 500px) {
+  #professors .photo-gallery_pro {
+    grid-template-columns: repeat(2, 1fr); /* 2개의 열로 설정 */
+  }
+}
+
+/* 화면 크기 소 */
+@media (max-width: 500px) {
+  #professors .photo-gallery_pro {
+    grid-template-columns: repeat(2, 1fr); /* 2개의 열로 설정 */
+  }
+}

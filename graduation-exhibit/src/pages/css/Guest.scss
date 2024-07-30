@@ -1,0 +1,272 @@
+/* 전체 여백 초기화 */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 방명록 스타일 설정 */
+.guest-wrap {
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.guest-top {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.guest-top h2 {
+  margin-bottom: 10px;
+  font-size: 28px;
+  line-height: 22px;
+  color: #111;
+}
+
+/* 채팅 상자 래퍼 */
+.chat-wrap {
+  flex: 1 1 auto;
+  display: grid; /* grid 레이아웃 사용 */
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* 반응형 열 설정 */
+  gap: 10px; /* 메시지 박스 사이 간격 */
+  padding-bottom: 75px;
+  list-style: none; /* 점 제거 */
+  padding: 0; /* 기본 패딩 제거 */
+  margin: 0; /* 기본 마진 제거 */
+}
+
+/* 화면 크기 소 */
+@media (max-width: 600px) {
+  .chat-wrap {
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* 최소 2열로 설정 */
+  }
+}
+
+/* 개별 메시지 상자 스타일 */
+.chat-box {
+  width: 100%; /* 그리드 셀에 맞춰서 100%로 설정 */
+  min-height: 150px; /* 최소 높이 설정 */
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 10px;
+  border-radius: 8px 8px 0 8px;
+  box-shadow: 2px 3px 5px rgba(170, 170, 170, 0.5);
+  box-sizing: border-box;
+  background: #333; /* 기본 배경색 설정 */
+}
+
+.chat-box h3 {
+  margin: 0 0 5px;
+  font-size: 15px;
+  line-height: 18px;
+  font-weight: 500;
+}
+
+.chat-box p {
+  font-size: 14px;
+}
+
+.chat-box input {
+  background: none;
+  border: none;
+  font-family: 'Noto Sans KR', sans-serif;
+  color: #333;
+  font-size: 15.5px;
+  line-height: 18px;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+.chat-box input:focus {
+  outline: none;
+}
+
+.chat-box input:disabled {
+  border: none;
+}
+
+.chat-box textarea {
+  flex: 1;
+  background: none;
+  border: none;
+  font-family: 'Noto Sans KR', sans-serif;
+  color: #333;
+  font-weight: 400;
+  font-size: 14px;
+  resize: none;
+  padding: 0;
+}
+
+.chat-box textarea:focus {
+  outline: none;
+}
+
+.chat-box textarea::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chat-box textarea::-webkit-scrollbar-thumb {
+  background-color: #bbb;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.chat-box textarea::-webkit-scrollbar-track {
+  background-color: #eee;
+  border-radius: 10px;
+}
+
+/* 채팅 입력 영역 스타일 */
+.chat-input {
+  width: 100%;
+  max-width: 500px;
+  height: 80px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background: rgba(100, 100, 100, 0.8);
+  border-radius: 30px 30px 50px 50px;
+  bottom: 100px;
+  box-sizing: border-box;
+}
+
+/* 채팅 생성 영역 스타일 */
+.create-wrap .out-area {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.chat-create {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  right: 120px;
+  bottom: 100px;
+  padding: 10px;
+  background: rgba(80, 80, 80, 0.8);
+  z-index: 5;
+  transition: 0.5s;
+  overflow: hidden;
+}
+
+.chat-create.input-wrap {
+  width: 280px;
+  height: 255px;
+  border-radius: 10px;
+}
+
+.chat-create.icon-wrap {
+  width: 30px;
+  height: 30px;
+  padding: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.create-icon path {
+  fill: #fff;
+}
+
+.chat-create form {
+  flex: 0 0 auto;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.input-wrap {
+  display: flex;
+  flex-flow: column nowrap;
+  margin-right: 8px;
+}
+
+.color-select {
+  flex: 0 0 auto;
+  display: flex;
+  flex-flow: row nowrap;
+  margin-top: 5px;
+  list-style: none; /* 점 제거 */
+  padding: 0; /* 기본 패딩 제거 */
+  margin: 0; /* 기본 마진 제거 */
+}
+
+.color-select li {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+.color-select li:hover {
+  border: 1px solid #333;
+  box-sizing: border-box;
+}
+
+.color-select .color-1 {
+  background: #ededed;
+}
+
+.color-select .color-2 {
+  background: #bebebe;
+}
+
+.color-select .color-3 {
+  background: #999999;
+}
+
+.color-select .color-4 {
+  background: #666666;
+}
+
+.color-select .color-5 {
+  background: #333333;
+}
+
+.color-select .color-6 {
+  background: #000000;
+}
+
+/* 수정 버튼 래퍼 스타일 */
+.edit-btn-wrap {
+  display: flex;
+  flex-flow: column;
+  z-index: 1;
+}
+
+.edit-btn-wrap button {
+  flex: 0 0 auto;
+  width: 46px;
+  height: 25px;
+  padding: 0 10px;
+  border: none;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 3px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.edit-btn-wrap button.save-btn {
+  background: #333;
+  margin-bottom: 5px;
+}
+
+.edit-btn-wrap button.cancel-btn {
+  background: #bbb;
+}

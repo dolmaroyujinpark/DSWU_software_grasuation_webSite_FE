@@ -1,0 +1,92 @@
+/* src/sections/About.css */
+
+/* About section 기본 스타일 */
+#about {
+    background-color: #ffffff; /* 배경색 */
+    color: black; /* 글자 색상 */
+    padding: 50px;
+    margin: 0 auto; /* 중앙 정렬을 위해 자동 마진 */
+    max-width: 100%; /* 최대 너비 설정 */
+    box-sizing: border-box; /* padding을 포함하여 전체 너비를 계산 */
+  }
+  
+  /* 로고 스타일 */
+  .logo {
+    width: 100%; /* 화면 너비에 맞게 로고 크기 조정 */
+    height: auto; /* 비율 유지 */
+    display: block; /* 블록 요소로 설정하여 줄 바꿈을 강제 */
+    margin-bottom: 30px; /* 로고와 텍스트 간의 간격 */
+  }
+  
+  /* About 콘텐츠 스타일 */
+  .about-content {
+    display: flex;
+    flex-direction: row; /* 기본적으로 세로 정렬 */
+    justify-content: center;
+    text-align: left; /* 텍스트 정렬을 왼쪽으로 */
+    width: 100%; /* 전체 너비 설정 */
+    gap: 20px; /* 좌우 간격 */
+  }
+  
+  /* 왼쪽과 오른쪽 콘텐츠 스타일 */
+  .about-left-content {
+    width: 60%; /* 왼쪽 컨텐츠는 60% */
+    border-right: 1px solid black; /* 왼쪽과 오른쪽을 나누는 경계선 */
+    padding-right: 20px; /* 경계선과 텍스트 간의 간격 */
+  }
+  
+  .about-right-content {
+    width: 40%; /* 오른쪽 컨텐츠는 40% */
+    padding-left: 20px; /* 경계선과 텍스트 간의 간격 */
+  }
+  
+  .about-left-content, .about-right-content {
+    max-width: 1000px;
+    margin: 0;
+    padding: 10px;
+  }
+  
+  /* 기본 텍스트 스타일 */
+  .about-left-content p, .about-right-content p {
+    font-size: 1.2em; /* 기본 텍스트 크기 */
+    margin: 20px 0; /* 텍스트 간의 간격 설정 */
+  }
+  
+  /* 미디어 쿼리: 화면 크기에 따른 조정 */
+  @media screen and (max-width: 1024px) {
+    .about-left-content p, .about-right-content p {
+      font-size: 1em; /* 화면 너비가 1024px 이하일 때 글자 크기 조정 */
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .about-content {
+      flex-direction: column; /* 작은 화면에서는 세로 방향으로 배치 */
+    }
+  
+    .about-left-content {
+      border-right: none; /* 세로 구분선 제거 */
+      border-bottom: 1px solid black; /* 가로 구분선 추가 */
+      padding-right: 0; /* 오른쪽 패딩 제거 */
+      padding-bottom: 20px; /* 아래쪽 패딩 추가 */
+      width: 100%; /* 전체 너비를 활용 */
+      box-sizing: border-box; /* padding을 포함하여 전체 너비를 계산 */
+    }
+  
+    .about-right-content {
+      padding-left: 0; /* 왼쪽 패딩 제거 */
+      width: 100%; /* 전체 너비를 활용 */
+      box-sizing: border-box; /* padding을 포함하여 전체 너비를 계산 */
+    }
+  
+    .about-left-content p, .about-right-content p {
+      font-size: 1em; /* 화면 너비가 768px 이하일 때 글자 크기 조정 */
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .about-left-content p, .about-right-content p {
+      font-size: 0.8em; /* 화면 너비가 480px 이하일 때 글자 크기 조정 */
+    }
+  }
+  

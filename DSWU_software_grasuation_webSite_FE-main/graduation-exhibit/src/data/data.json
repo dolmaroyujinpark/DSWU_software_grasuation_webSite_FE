@@ -1,0 +1,27 @@
+{
+    "Header": {
+      "title": "Welcome to My Website",
+      "subtitle": "This is the subtitle"
+    },
+    "About": {
+      "logo": "path/to/logo.png",
+      "description": "About us description here."
+    },
+    "Projects": [
+      { "title": "Project 1", "description": "Description of Project 1" },
+      { "title": "Project 2", "description": "Description of Project 2" }
+    ],
+    "Professors": {
+      "list": ["Professor A", "Professor B"]
+    },
+    "Guest": {
+      "comments": ["Comment 1", "Comment 2"]
+    },
+    "Pics": {
+      "images": ["path/to/image1.jpg", "path/to/image2.jpg"]
+    },
+    "Designers": {
+      "text": "2024 SOFTWARE 졸업전시 준비위원회"
+    }
+  }
+  

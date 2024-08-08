@@ -1,9 +1,17 @@
 /* 전체 여백 초기화 */
-body,
-html {
+body, html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+  margin: 0px;
+}
+
+ul {
+  padding: 0px;
 }
 
 /* 방명록 스타일 설정 */
@@ -19,44 +27,35 @@ html {
   box-sizing: border-box;
 }
 
-.guest-top {
+.guest-top { /* GUESTBOOK 텍스트 공간 */
   flex: 0 0 auto;
   display: flex;
   flex-direction: column;
 }
 
 .guest-top h2 {
-  margin-bottom: 10px;
+  margin: 32px;
   font-size: 28px;
   line-height: 22px;
-  color: #111;
+  color: #000000;
 }
 
 /* 채팅 상자 래퍼 */
 .chat-wrap {
-  flex: 1 1 auto;
   display: grid; /* grid 레이아웃 사용 */
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* 반응형 열 설정 */
-  gap: 10px; /* 메시지 박스 사이 간격 */
-  padding-bottom: 75px;
-  list-style: none; /* 점 제거 */
-  padding: 0; /* 기본 패딩 제거 */
-  margin: 0; /* 기본 마진 제거 */
-}
-
-/* 화면 크기 소 */
-@media (max-width: 600px) {
-  .chat-wrap {
-    grid-template-columns: repeat(2, minmax(0, 1fr)); /* 최소 2열로 설정 */
-  }
+  gap: 10px; /* 항목 간격 설정 */
+  justify-content: center;
+  width: 100%;
 }
 
 /* 개별 메시지 상자 스타일 */
 .chat-box {
-  width: 100%; /* 그리드 셀에 맞춰서 100%로 설정 */
+  width: 100%; /* 너비를 100%로 설정하여 부모 요소에 맞춤 */
+  max-width: 100%; /* 최대 너비를 100%로 설정 */
   min-height: 150px; /* 최소 높이 설정 */
   display: flex;
-  flex-flow: column nowrap;
+  flex-direction: column;
   padding: 10px;
   border-radius: 8px 8px 0 8px;
   box-shadow: 2px 3px 5px rgba(170, 170, 170, 0.5);
@@ -64,54 +63,31 @@ html {
   background: #333; /* 기본 배경색 설정 */
 }
 
-.chat-box h3 {
-  margin: 0 0 5px;
-  font-size: 15px;
-  line-height: 18px;
-  font-weight: 500;
-}
-
-.chat-box p {
-  font-size: 14px;
-}
-
-.chat-box input {
+/* 채팅 상자의 입력 필드 스타일 */
+.chat-box input, .chat-box textarea {
   background: none;
   border: none;
   font-family: 'Noto Sans KR', sans-serif;
   color: #333;
-  font-size: 15.5px;
+}
+
+.chat-box input {
+  font-size: 18px;
   line-height: 18px;
   font-weight: 500;
   margin-bottom: 0;
 }
 
-.chat-box input:focus {
-  outline: none;
-}
-
-.chat-box input:disabled {
-  border: none;
-}
-
 .chat-box textarea {
   flex: 1;
-  background: none;
-  border: none;
-  font-family: 'Noto Sans KR', sans-serif;
-  color: #333;
   font-weight: 400;
   font-size: 14px;
   resize: none;
   padding: 0;
 }
 
-.chat-box textarea:focus {
+.chat-box input:focus, .chat-box textarea:focus {
   outline: none;
-}
-
-.chat-box textarea::-webkit-scrollbar {
-  width: 8px;
 }
 
 .chat-box textarea::-webkit-scrollbar-thumb {
@@ -128,10 +104,8 @@ html {
 /* 채팅 입력 영역 스타일 */
 .chat-input {
   width: 100%;
-  max-width: 500px;
   height: 80px;
   position: absolute;
-  left: 50%;
   transform: translate(-50%, 0);
   background: rgba(100, 100, 100, 0.8);
   border-radius: 30px 30px 50px 50px;
@@ -142,7 +116,7 @@ html {
 /* 채팅 생성 영역 스타일 */
 .create-wrap .out-area {
   width: 100%;
-  height: 100vh;
+  height: auto;
   position: fixed;
   top: 0;
   left: 0;
@@ -156,8 +130,8 @@ html {
   align-items: center;
   justify-content: center;
   position: fixed;
-  right: 120px;
-  bottom: 100px;
+  right: 30px;
+  bottom: 30px;
   padding: 10px;
   background: rgba(80, 80, 80, 0.8);
   z-index: 5;
@@ -166,8 +140,8 @@ html {
 }
 
 .chat-create.input-wrap {
-  width: 280px;
-  height: 255px;
+  width: 300px;
+  height: 200px;
   border-radius: 10px;
 }
 
@@ -176,7 +150,6 @@ html {
   height: 30px;
   padding: 20px;
   border-radius: 50%;
-  cursor: pointer;
 }
 
 .create-icon path {
@@ -184,32 +157,37 @@ html {
 }
 
 .chat-create form {
-  flex: 0 0 auto;
   display: flex;
   flex-flow: column nowrap;
 }
 
 .input-wrap {
-  display: flex;
-  flex-flow: column nowrap;
-  margin-right: 8px;
+  display: flex; /* 플렉스 박스 사용하여 가로 배치 */
+  align-items: center; /* 세로 중앙 정렬 */
+  justify-content: space-between; /* 공간을 균등하게 배치 */
+  width: 100%; /* 부모 요소의 너비에 맞춤 */
 }
 
-.color-select {
-  flex: 0 0 auto;
+.chat-box {
+  flex: 1; /* 남은 공간을 채우도록 설정 */
+  min-width: 200px; /* 최소 너비를 설정하여 화면이 작아질 때 크기 조정 */
   display: flex;
-  flex-flow: row nowrap;
-  margin-top: 5px;
-  list-style: none; /* 점 제거 */
-  padding: 0; /* 기본 패딩 제거 */
-  margin: 0; /* 기본 마진 제거 */
+  flex-direction: column;
+  max-width: 70%; /* 화면 크기에 따라 최대 너비를 조정 */
+}
+
+/* 색 선택 공간 스타일 */
+.color-select {
+  display: grid;
+  margin-left: 10px; /* chat-box와의 간격을 위해 왼쪽 여백 추가 */
+  grid-template-columns: repeat(auto-fill, minmax(20px, 1fr)); /* 색상 선택기 그리드 설정 */
 }
 
 .color-select li {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  margin-left: 8px;
+  margin-bottom: 3px; /* 각 색상 선택기 간의 간격 */
   cursor: pointer;
 }
 
@@ -218,33 +196,16 @@ html {
   box-sizing: border-box;
 }
 
-.color-select .color-1 {
-  background: #ededed;
-}
-
-.color-select .color-2 {
-  background: #bebebe;
-}
-
-.color-select .color-3 {
-  background: #999999;
-}
-
-.color-select .color-4 {
-  background: #666666;
-}
-
-.color-select .color-5 {
-  background: #333333;
-}
-
-.color-select .color-6 {
-  background: #000000;
-}
+.color-select .color-1 { background: #ededed; }
+.color-select .color-2 { background: #bebebe; }
+.color-select .color-3 { background: #999999; }
+.color-select .color-4 { background: #666666; }
+.color-select .color-5 { background: #333333; }
+.color-select .color-6 { background: #000000; }
 
 /* 수정 버튼 래퍼 스타일 */
 .edit-btn-wrap {
-  display: flex;
+  display: inline;
   flex-flow: column;
   z-index: 1;
 }
@@ -264,9 +225,37 @@ html {
 
 .edit-btn-wrap button.save-btn {
   background: #333;
-  margin-bottom: 5px;
+  margin: 5px;
 }
 
 .edit-btn-wrap button.cancel-btn {
   background: #bbb;
+  margin: 5px;
+}
+
+/* 화면 크기 소 */
+@media (max-width: 800px) {
+  .chat-wrap {
+    grid-template-columns: repeat(2, 1fr); /* 열 너비를 더 작게 설정 */
+  }
+
+  .chat-box {
+    max-width: 100%; /* 최대 너비를 100%로 설정 */
+  }
+
+  .chat-create.input-wrap {
+    width: 280;
+    height: auto;
+  }  
+}
+
+@media (max-width: 600px) {
+  .chat-wrap {
+    grid-template-columns: repeat(2, 1fr); /* 열 너비를 더 작게 설정 */
+  }
+
+  .chat-box {
+    min-width: 100%; /* 화면이 매우 작은 경우 전체 너비를 사용 */
+    max-width: 100%; /* 최대 너비를 100%로 설정 */
+  }
 }

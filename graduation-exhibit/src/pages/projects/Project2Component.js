@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import '../css/ProjectComponent.css';
-import i1 from '../../assets/i1.jpg';
-import i2 from '../../assets/i2.jpg';
-import i3 from '../../assets/i3.jpg';
-import p1 from '../../assets/p1.jpg';
-import p2 from '../../assets/p2.jpg';
-import p3 from '../../assets/p3.jpg';
-import p4 from '../../assets/p4.jpg';
-import p5 from '../../assets/p4.jpg';
+import i1 from '../../assets/team2_service1.PNG';
+import i2 from '../../assets/team2_service2.PNG';
+import i3 from '../../assets/team2_service3.PNG';
+import i4 from '../../assets/team2_service4.PNG';
+import i5 from '../../assets/team2_service5.PNG';
+import project2_mainphoto from '../../assets/project2_mainphoto.PNG';
 
 function Project2Component() {
     const [likeCount, setLikeCount] = useState(0); // 좋아요 카운트 상태
@@ -17,32 +15,27 @@ function Project2Component() {
         {
             name: "| 김경민",
             role: "| 데이터베이스 설계 및 구축, 라즈베리파이 제어, 서버 프로그래밍",
-            ment: "Fall down 7 Stand up 8",
-            photo: p1,
+            ment: "Fall down 7 Stand up 8"
         },
         {
             name: "| 안가은",
             role: "| 라즈베리파이 제어, 서버 프로그래밍, YOLO 모델 훈련",
-            ment: "내 필름이 더 반짝 I did it",
-            photo: p2,
+            ment: "내 필름이 더 반짝 I did it"
         },
         {
             name: "| 문나연",
             role: "| 앱 프로그래밍, 데이터베이스 설계 및 구축, CNN 모델 설계 및 훈련",
-            ment: "잊지마 너는 그렇게 찬란히 빛나",
-            photo: p3,
+            ment: "잊지마 너는 그렇게 찬란히 빛나"
         },
         {
             name: "| 정다윤",
             role: "| 앱 프로그래밍, CNN 모델 설계 및 훈련",
-            ment: "단단해져 고난은 make it true",
-            photo: p4,
+            ment: "단단해져 고난은 make it true"
         },
         {
             name: "| 한서현",
             role: "| 라즈베리파이 제어, 서버 프로그래밍, YOLO 모델 훈련",
-            ment: "I run 거친 바람 가르고 난 다시 높이 날아올라",
-            photo: p5,
+            ment: "I run 거친 바람 가르고 난 다시 높이 날아올라"
         },
     ];
 
@@ -60,13 +53,15 @@ function Project2Component() {
     return (
         <div className="AppComp">
             <div className="App-header">
-                <h1>ProgFriends: 식물과 green 일상</h1>
-                <h1>Progfriends</h1>
+                <h1>ㅣProgFriends: 식물과 green 일상</h1>
+                <h1>ㅣProgfriends</h1>
             </div>
             <div className="images">
-                <div className="photo" style={{ backgroundImage: `url(${i1})` }}></div>
-                <div className="photo" style={{ backgroundImage: `url(${i2})` }}></div>
-                <div className="photo" style={{ backgroundImage: `url(${i3})` }}></div>
+                <img src={i1} alt="service1" className="photo" />
+                <img src={i2} alt="service2" className="photo" />
+                <img src={i3} alt="service3" className="photo" />
+                <img src={i4} alt="service4" className="photo" />
+                <img src={i5} alt="service5" className="photo" />
             </div>
             <hr className="divider" />
             <div className="App-header">
@@ -101,7 +96,7 @@ function Project2Component() {
                 <div className="description-content">
                     <p>Skill | JAVA, Kotlin, SQL, C, C++, TensorFlowLite, MediaPipe, MLkit</p>
                     <p>Tool | AndroidStudio, Figma, Arduino, Fusion 360, Firebase, Github</p>
-                    <p>Device| Arduino Uno </p>
+                    <p>Device | Arduino Uno </p>
                 </div>
             </div>
 
@@ -116,15 +111,17 @@ function Project2Component() {
             <div className="App-header">
                 <h1>ㅣDEVELOPERS</h1>
             </div>
+            <div className="main-photo">
+                <img src={project2_mainphoto} alt="Main" className="main-photo-img" />
+            </div> {/* 큰 이미지 */}
 
-            <div className="developer-list">
+            <div className="developer-list-2">
                 {developers.map((developer, index) => (
-                    <div className="developer-card" key={index}>
-                        <div className="photo" style={{ backgroundImage: `url(${developer.photo})` }}></div>
+                    <div className="developer-card-2" key={index}>
                         <div className="info">
-                            <p>{developer.name}</p>
-                            <p>{developer.role}</p>
-                            <p>{developer.ment}</p>
+                            <p className="name">{developer.name}</p>
+                            <p className="role">{developer.role}</p>
+                            <p className="ment">{developer.ment}</p>
                         </div>
                     </div>
                 ))}

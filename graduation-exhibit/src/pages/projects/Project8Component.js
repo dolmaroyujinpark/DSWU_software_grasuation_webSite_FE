@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import '../css/ProjectComponent.css';
-import i1 from '../../assets/i1.jpg';
-import i2 from '../../assets/i2.jpg';
-import i3 from '../../assets/i3.jpg';
-import p1 from '../../assets/p1.jpg';
-import p2 from '../../assets/p2.jpg';
-import p3 from '../../assets/p3.jpg';
-import p4 from '../../assets/p4.jpg';
-import p5 from '../../assets/p4.jpg';
+import i1 from '../../assets/team8_service1.jpg';
+import i2 from '../../assets/team8_service2.jpg';
+import i3 from '../../assets/team8_service3.jpg';
+import i4 from '../../assets/team8_service4.png';
+import p1 from '../../assets/동그라미_1.PNG';
+import p2 from '../../assets/동그라미_2.PNG';
+import p3 from '../../assets/동그라미_3.JPG';
+import p4 from '../../assets/동그라미_4.PNG';
+import p5 from '../../assets/동그라미_5.PNG';
 
 function Project8Component() {
     const [likeCount, setLikeCount] = useState(0); // 좋아요 카운트 상태
@@ -15,33 +16,33 @@ function Project8Component() {
 
     const developers = [
         {
-            name: "| 이승은",
-            role: "| 아두이노 무선 리모컨 제작 및 기능 구현, 데이터 베이스, 게임 프로그래밍, 무선 리모컨과 어플 간 서버 통신",
-            ment: "1년 넘게 팀원들의 노력이 모여 우리 앱 '샨티'가 완성되었다. 우리의 소중한 노력의 산물인 샨티! 샨티처럼 몸도 마음도 건강하게 살자.",
+            name: "| 이서영",
+            role: "| 데이터베이스 연동, UI/UX 설계 및 구축",
+            ment: "열정적인 팀원들과 함께 목표를 이루기 위해 노력하며 즐겁게 프로젝트를 완성할 수 있었던 기회에 감사드립니다.",
             photo: p1,
         },
         {
-            name: "| 정수민",
-            role: "| 어플 UI제작 및 기능 구현 운동 자세 분석 데이터 수집 및 기능 구현, 데이터 베이스",
-            ment: "긴 시간 동안 수많은 시행착오를 겪으며 함께 좋은 결과물을 만들어낸 정말 의미 있는 프로젝트였다. 이 과정에서 값진 경험을 쌓으며 나 자신도 크게 성장할 수 있었다. 조원들과 머리를 맞대고 새벽까지 회의하고 고민하며 개발했던 순간들이 많이 떠오른다. 모두 정말 고생 많았고, 고마웠어!",
+            name: "| 임지영",
+            role: "| 데이터베이스 연동, UI/UX 설계 및 구축",
+            ment: "팀원들 모두가 밤낮없이 노력한 덕분에 이번 프로젝트는 잊지 못할 소중한 경험으로 남았습니다.",
             photo: p2,
         },
         {
-            name: "| 이채민",
-            role: "| 어플 UI제작 및 기능 구현, 통합 시스템 구축, 게임 프로그래밍",
-            ment: "1년 넘게 진행한 캡스톤 프로젝트를 마무리하며, 그동안 많은 도전과 성장을 경험할 수 있었습니다. 가장 크게 배운 것은 팀원들과의 협력과 소통이었던 것 같습니다. 샨티팀, 수고 많았어! 샨티하게 살자~",
+            name: "| 정윤서",
+            role: "| 라즈베리파이 시스템 구축, 데이터베이스 연동",
+            ment: "대학 생활의 마침표를 찍는 졸업 프로젝트를 완수하고나니 이제 진짜 졸업이 실감납니다. 프로젝트 기간 동안 함께 달려나간 우리 동그라미 팀원들 그리고 지도교수 이재호 교수님께 감사를 표합니다. 1년동안 완주를 목표로 함께 달리며 때로는 지치고 벽에 부딪히기도 했지만, 이 모든 경험이 우리에게 양분이 될 거라 믿어 의심치 않습니다. 소중한 경험을 통해 많이 배우고 깨달음을 얻었으며, 이에 함께 해준 팀원들에게 다시 한 번 고마움을 전합니다. ",
             photo: p3,
         },
         {
-            name: "| 유지연",
-            role: "| 운동 자세 분석 데이터 수집 및 기능 구현, 통합 시스템 구축, 딥러닝 데이터 수집 및 모델 학습",
-            ment: "항상 발등에 불 떨어지듯이 지냈던 우리 팀! 매번 늦은 시간까지 회의하느라 수고했고 고마워~!",
+            name: "| 추서연",
+            role: "| 알고리즘 설계,딥러닝 데이터 수집, 모델 개발",
+            ment: "프로젝트를 통해 많은 것을 배우고 성장할 수 있었습니다. 팀원들의 헌신과 협업 덕분에 예상보다 더 훌륭한 결과를 얻을 수 있었고, 함께 일하는 과정에서 얻은 소중한 경험들은 앞으로의 커리어에 큰 자산이 될 것입니다.프로젝트 내내 도전과 해결책을 찾아가는 과정이 즐거웠고, 그로 인해 더욱 단단해진 팀워크를 느낄 수 있었습니다. 이 기회를 주신 모든 분들께 깊은 감사를 드리며, 앞으로도 함께할 도전에 대한 기대감을 안고 마무리하고자 합니다.",
             photo: p4,
         },
         {
-            name: "| 형재희",
-            role: "| 얼굴 딥러닝 데이터 수집 및 모델 학습, 얼굴 위치에 따른 방향 조절 구현",
-            ment: "프로젝트 하는 동안 팀원들에게 많이 배우고 긴 시간 동안 다같이 끝까지 함께여서 힘든 시간도 잘 이겨낼 수 있었습니다 이 프로젝트가 좋은 기반이 되어서 더 좋은 개발자로, 더 좋은 사람으로 성장할 수 있도록 항상 기도할게 우리 이제 졸업하자!!",
+            name: "| 탁재영",
+            role: "| 데이터베이스 설계 및 구축, 추천 알고리즘 설계 및 구현",
+            ment: "팀원들과 뜻을 모아 프로젝트 완성에 온전히 몰입할 수 있는 즐거운 시간이었습니다.",
             photo: p5,
         },
     ];
@@ -60,23 +61,24 @@ function Project8Component() {
     return (
         <div className="AppComp">
             <div className="App-header">
-                <h1>SHANNTI: 언제 어디서나 누구든지 올바른 운동을 통해 건강한 삶 살기</h1>
+                <h1>ㅣ우리집 냉장고 식재료 해결 열쇠:Cookey</h1>
+                <h1>ㅣ동그라미</h1>
             </div>
             <div className="images">
-                <div className="photo" style={{ backgroundImage: `url(${i1})` }}></div>
-                <div className="photo" style={{ backgroundImage: `url(${i2})` }}></div>
-                <div className="photo" style={{ backgroundImage: `url(${i3})` }}></div>
+                <img src={i1} alt="service1" className="photo" />
+                <img src={i2} alt="service2" className="photo" />
+                <img src={i3} alt="service3" className="photo" />
+                <img src={i4} alt="service4" className="photo" />
             </div>
             <hr className="divider" />
             <div className="App-header">
                 <h1>ㅣ기획 의도</h1>
                 <div className="description-content">
                     <p>
-                        현대 사회에서 건강과 웰빙에 대한 관심이 높아지면서 많은 사람들이 규칙적인 운동을 생활의 중요한 부분으로 인식하고 있다. 그러나 바쁜 일상 속에서
-                        운동을 위해 따로 시간을 내고 비용을 지출하는 것이 쉽지 않으며, 전문가의 도움 없이 올바른 운동 자세를 유지하는 것도 어렵다. 이를 해결하기 위해 정확한
-                        자세로 운동할 수 있도록 돕는 애플리케이션을 개발하였다. 이 애플리케이션은 얼굴 인식 로그인 기능, Mediapipe Pose Detection을 사용한 자세 분석 기능,
-                        그리고 Arduino 에어마우스를 활용한 유산소 게임 기능을 통합하여 사용자들이 안전하고 효율적으로 운동할 수 있도록 돕는다. 앞으로도 사용자 피드백을
-                        반영하여 기능을 개선하고 다양한 운동 프로그램과 게임을 개발하여 시간과 장소에 제약없이 즐겁게 운동할 수 있도록 할 것이다.
+                    저희의 서비스는 현대인들의 바쁜 일상 속에서 냉장고 속 식재료를 간편하게 파악할 수 있도록 신선도, 소비기한 등의 정보를 제공하여 식재료 관리를 더욱 효율적이고 편리하게 만드는 것 입니다.
+                    </p>
+                    <p>
+                    또한 냉장고 속 식재료를 기반으로 한 레시피를 제공하여 메뉴 고민에 대한 부담을 덜고, 다양한 요리를 즐길 수 있도록 하여 식생활의 질을 향상시키는 데 중점을 두고 있습니다.
                     </p>
                 </div>
             </div>
@@ -84,23 +86,24 @@ function Project8Component() {
             <div className="App-header">
                 <h1>ㅣ서비스 소개</h1>
                 <div className="description-content">
-                    <p>
-                        우리 애플리케이션은 MLKit을 활용한 얼굴 인식 로그인 기능을 제공하여 언제 어디서나 간편하게 로그인할 수 있다. 이 기능은 여러 사용자가 하나의 기기를
-                        사용할 때에도 편리하며, 특히 어르신과 어린이 같은 사용자들에게 유용하다. 또한, Mediapipe Pose Detection을 통해 사용자의 자세를 분석하고 올바른
-                        자세로 운동할 수 있도록 즉각적인 피드백을 제공한다. 이를 통해 부상 위험을 줄이고 효과적인 운동을 돕는다. 더불어, 아두이노로 제작한 에어마우스를
-                        이용한 게임 요소를 추가하여 유산소 운동을 더 즐겁게 수행할 수 있도록 하고 랭킹 시스템을 도입해 운동에 대한 동기부여를 강화한다. 이처럼, 우리
-                        애플리케이션은 사용자들이 언제 어디서나 정확한 자세로 운동할 수 있도록 지원하며, 보다 즐겁고 효과적인 운동 경험을 제공하여 전반적인 건강 증진에
-                        기여한다.
-                    </p>
+                    <p>[쿡기(Cookey)의 핵심 기능]</p>
+                    <p>1. 식재료 현황 분석 서비스</p>
+                    <p>실시간 객체 탐지를 통한 냉장고 속 식재료 현황 및 앱 업데이트</p>
+                    <p>주요 정보 : 식재료의 종류, 소비기한, 들어온 날짜, 신선도</p>
+                    <p>해당 정보를 바탕으로 한 자주 찾는 식재료 등록, 원터치 주문, 소비기한 임박 재료 알림 기능 제공</p>
+                    <p>2. 보유 식재료 기반 에시피 추천 서비스</p>
+                    <p>사용자의 냉장고 식재료 현황에 알맞는 레시피 추천</p>
+                    <p>소비기한 임박 재료와 자주 찾는 재료를 우선순위로 둔 알고리즘 설계</p>
+                    <p>앱 페이지에는 각 항목별 알고리즘이 적용된 Top 3 레시피와 전체 레시피 나열 및 레시피 상세 페이지 제공</p>
                 </div>
             </div>
             <hr className="divider" />
             <div className="App-header">
                 <h1>ㅣ사용 언어/개발 툴</h1>
                 <div className="description-content">
-                    <p>Skill | JAVA, Kotlin, SQL, C, C++, TensorFlowLite, MediaPipe, MLkit</p>
-                    <p>Tool | AndroidStudio, Figma, Arduino, Fusion 360, Firebase, Github</p>
-                    <p>Device| Arduino Uno </p>
+                    <p>Skill | JAVA, Python</p>
+                    <p>Tool | AndroidStudio, Google Firebase, TensorFlow lite, TensorFlow, PyTorch</p>
+                    <p>Device | RaspberryPi4</p>
                 </div>
             </div>
 
@@ -119,11 +122,11 @@ function Project8Component() {
             <div className="developer-list">
                 {developers.map((developer, index) => (
                     <div className="developer-card" key={index}>
-                        <div className="photo" style={{ backgroundImage: `url(${developer.photo})` }}></div>
+                        <img src={developer.photo} alt={developer.name} className="photo" />
                         <div className="info">
-                            <p>{developer.name}</p>
-                            <p>{developer.role}</p>
-                            <p>{developer.ment}</p>
+                            <p className="name">{developer.name}</p>
+                            <p className="role">{developer.role}</p>
+                            <p className="ment">{developer.ment}</p>
                         </div>
                     </div>
                 ))}

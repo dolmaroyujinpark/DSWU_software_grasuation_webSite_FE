@@ -2,10 +2,11 @@
 .footer {
     background-color: #000000;
     color: white;
-    padding: 40px;
+    padding: 30px;
     text-align: left;
     position: bottom;
     width: 100%;
+    line-height: 1.2;
   }
   
   .footer p {

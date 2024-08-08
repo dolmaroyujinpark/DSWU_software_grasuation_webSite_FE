@@ -1,41 +1,31 @@
-body {
-    margin: 0;
-}
-
 .AppComp {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    text-align: left;
+    text-align: justify;
 }
 
 .App-header h1 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    font-weight: normal;
-    margin: 10px 40px;
-}
-
-.App-header, .header {
-    margin: 10px 0;
-    text-align: left;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 10px 30px;
 }
 
 .images {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-    padding: 0px 40px;
-    white-space: nowrap;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* 2개의 열로 설정 */
+    gap: 40px;
+    /* 이미지 사이의 간격 */
+    margin: 30px;
 }
 
 .photo {
-    width: 30%;
-    height: 600px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    display: inline-block;
+    width: 80%;
+    height: auto;
+    object-fit: contain;
+    /* 이미지를 비율 유지하면서 컨테이너에 맞춤 */
+    border-radius: 12px;
 }
 
 .divider {
@@ -61,9 +51,9 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 20px;
     flex-grow: 1;
-    justify-items: center;
+    /*justify-items: center;*/
     align-items: start;
-    padding: 20px 100px;
+    padding: 20px 60px;
 }
 
 .developer-card {
@@ -73,29 +63,94 @@ body {
     border-radius: 10px;
     width: 80%;
     max-width: 500px;
+    overflow: hidden; /* 콘텐츠가 넘치지 않도록 설정 */
+    padding: 10px 15px;
+    box-sizing: border-box; /* padding과 border가 width에 포함되도록 설정 */
 }
 
 .developer-card .photo {
-    width: 200px;
-    height: 200px;
-    background-size: cover;
+    width: 120px; /* 사진 크기 조절 */
+    height: 120px; /* 사진 크기 조절 */
+    background-size: cover; /* 사진이 카드에 맞게 커버되도록 설정 */
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 50%;
     margin-right: 20px;
-    min-width: 200px;
-    min-height: 200px;
-    aspect-ratio: 1 / 1;
 }
 
 .info {
     text-align: left;
-    white-space: nowrap;
+    max-height: 300px;
+    overflow: hidden; /* 콘텐츠가 넘치지 않도록 설정 */
+    text-overflow: ellipsis; /* 콘텐츠가 넘칠 경우 말줄임표 표시 */
+    word-wrap: break-word; /* 긴 단어가 넘치지 않도록 설정 */
 }
 
 .info p {
     margin: 5px 0;
-    white-space: nowrap;
+    word-wrap: break-word; /* 긴 단어가 넘치지 않도록 설정 */
+}
+
+.developer-card .info .name, .developer-card .info .role,
+.developer-card-2 .info .name, .developer-card-2 .info .role {
+    text-align: justify;
+    font-weight: bold;
+}
+
+.developer-card .info .ment {
+    text-align: justify;
+    max-height: 200px;
+    overflow-y: auto; /* 세로 스크롤 추가 */
+    word-wrap: break-word; /* 긴 단어가 넘치지 않도록 설정 */
+}
+
+.developer-list-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+    justify-items: center;
+}
+
+.developer-card-2 {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    overflow: hidden; /* 콘텐츠가 넘치지 않도록 설정 */
+    padding: 10px;
+}
+
+.developer-card-2 .info p {
+    margin: 0px 40px;
+}
+
+.developer-card-2 .info .ment {
+    text-align: justify;
+    max-height: 200px;
+    overflow-y: auto; /* 세로 스크롤 추가 */
+    margin: 0 40px;
+}
+
+
+.main-photo {
+    height: 50%;
+    /* 너비를 100%로 설정하여 화면 크기에 맞춤 */
+    display: flex;
+    /* flexbox를 사용하여 정렬 */
+    justify-content: center;
+    /* 가로 중앙 정렬 */
+    align-items: center;
+    /* 세로 중앙 정렬 */
+    margin: 10px 45px;
+    overflow: hidden; /* 이미지가 부모 컨테이너를 넘지 않도록 숨김 */
+}
+
+.main-photo-img {
+    max-width: 50%; /* 최대 너비를 100%로 설정하여 화면 크기에 맞춤 */
+    height: auto; /* 높이를 자동으로 설정하여 비율 유지 */
+    object-fit: contain; /* 이미지 비율 유지 */
 }
 
 .oval-box {
@@ -114,10 +169,14 @@ body {
     color: black;
     cursor: pointer;
     transition: background 0.3s ease;
-    position: fixed; /* 화면에 고정 */
-    bottom: 20px; /* 화면 하단에서 20px 위로 */
-    right: 20px; /* 화면 오른쪽에서 20px 왼쪽으로 */
-    z-index: 1000; /* 다른 요소들보다 위에 오도록 */
+    position: fixed;
+    /* 화면에 고정 */
+    bottom: 20px;
+    /* 화면 하단에서 20px 위로 */
+    right: 20px;
+    /* 화면 오른쪽에서 20px 왼쪽으로 */
+    z-index: 1000;
+    /* 다른 요소들보다 위에 오도록 */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -131,7 +190,8 @@ body {
 
 .heart-icon {
     color: black;
-    margin-left: 10px; /* 아이콘과 텍스트 사이의 간격 */
+    margin-left: 10px;
+    /* 아이콘과 텍스트 사이의 간격 */
     font-size: 20px;
 }
 
@@ -160,6 +220,39 @@ body {
 
     .like-count {
         display: none;
+    }
+
+    .developer-list,
+    .developer-list-2 {
+        grid-template-columns: 1fr;
+        
+        /* 1개의 열로 나눔 */
+    }
+
+    .developer-card,
+    .developer-card-2 {
+        width: 100%;
+        max-width: none;
+        padding: 10px;
+    }
+
+    .developer-card .photo,
+    .developer-card-2 .photo {
+        width: 100px;
+        height: 100px;
+
+    }
+
+    .main-photo-img {
+        max-width: 80%; /* 최대 너비를 100%로 설정하여 화면 크기에 맞춤 */
+        height: auto; /* 높이를 자동으로 설정하여 비율 유지 */
+        object-fit: contain; /* 이미지 비율 유지 */
+    }
+
+    .images,
+    .photo {
+        grid-template-columns: 1fr;
+        /* 1개의 열로 나눔 */
     }
 }
 

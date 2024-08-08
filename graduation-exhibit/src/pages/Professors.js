@@ -1,14 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import photo_pro1 from '../assets/photo_pics2.PNG';
-import photo_pro2 from '../assets/photo_pics2.PNG';
-import photo_pro3 from '../assets/photo_pics2.PNG';
-import photo_pro4 from '../assets/photo_pics2.PNG';
+import photo_pro1 from '../assets/professor.jpg';
+import photo_pro2 from '../assets/professor.jpg';
+import photo_pro3 from '../assets/professor.jpg';
+import photo_pro4 from '../assets/professor.jpg';
 import './css/Professors.css'; // CSS 파일 추가
 
 function Professors() {
   return (
     <section id="professors" className="section">
+      <h2>Professors</h2>
       <div className="photo-gallery_pro">
         <Link to="/professor1">
           <img src={photo_pro1} alt="Professor 1" className="photo_pro" />

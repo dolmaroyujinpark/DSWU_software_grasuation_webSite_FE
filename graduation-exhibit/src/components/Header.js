@@ -1,12 +1,16 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
-import styled from 'styled-components';
+import { useNavigate, useLocation } from 'react-router-dom';
 import './Header.css';
 
 const Header = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const sidebarRef = useRef(null);
   const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [location.pathname]);
 
   useEffect(() => {
     const header = document.querySelector('.header');
@@ -56,21 +60,36 @@ const Header = () => {
   const handleTitleClick = (e) => {
     e.preventDefault();
     navigate('/');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleNavLinkClick = (e) => {
     e.preventDefault();
-    navigate(e.target.getAttribute('href'));
+    const targetHash = e.target.getAttribute('href');
+
+    if (location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => (
+        document.querySelector(targetHash)?.scrollIntoView({ behavior: 'smooth' })
+      ), 0);
+    } else {
+      navigate(e.target.getAttribute('href'));
+    }
+
     setIsSidebarOpen(false);
   };
 
   const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
+    setIsSidebarOpen(prev => !prev);
   };
+
+  // Calculate class names
+  const headerClassName = `header ${isSidebarOpen ? 'dark' : 'light'}`;
+  const sidebarClassName = `sidebar ${isSidebarOpen ? 'open' : ''}`;
 
   return (
     <>
-      <header className="header light">
+      <header className={headerClassName}>
         <a href="/" className="title-link" onClick={handleTitleClick}>
           <h1>Algorithm: Rhythm in Code</h1>
         </a>
@@ -79,15 +98,15 @@ const Header = () => {
         </div>
         <nav className="navbar">
           <ul className="nav-links">
-            <li className="nav-item"><a href="#about">About</a></li>
-            <li className="nav-item"><a href="#projects">Projects</a></li>
-            <li className="nav-item"><a href="#professors">Professors</a></li>
-            <li className="nav-item"><a href="#guest">Guest</a></li>
-            <li className="nav-item"><a href="#pics">Pics</a></li>
-            <li className="nav-item"><a href="#designers">Design</a></li>
+            <li className="nav-item"><a href="#about" onClick={handleNavLinkClick}>About</a></li>
+            <li className="nav-item"><a href="#projects" onClick={handleNavLinkClick}>Projects</a></li>
+            <li className="nav-item"><a href="#professors" onClick={handleNavLinkClick}>Professors</a></li>
+            <li className="nav-item"><a href="#guest" onClick={handleNavLinkClick}>Guest</a></li>
+            <li className="nav-item"><a href="#pics" onClick={handleNavLinkClick}>Pics</a></li>
+            <li className="nav-item"><a href="#designers" onClick={handleNavLinkClick}>Design</a></li>
           </ul>
         </nav>
-        <nav ref={sidebarRef} className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
+        <nav ref={sidebarRef} className={sidebarClassName}>
           <ul>
             <li><a href="#about" onClick={handleNavLinkClick}>About</a></li>
             <li><a href="#projects" onClick={handleNavLinkClick}>Projects</a></li>
@@ -103,3 +122,4 @@ const Header = () => {
 }
 
 export default Header;
+

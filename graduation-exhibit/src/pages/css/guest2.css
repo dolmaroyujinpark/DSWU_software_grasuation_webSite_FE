@@ -1,8 +1,20 @@
-/* 전체 여백 초기화 */
-body, html {
-  margin: 0;
-  padding: 0;
+/* 방명록 스타일 설정 */
+.guest-wrap {
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  margin: 0 auto;
   box-sizing: border-box;
+}
+
+.guest-top h2 {
+  margin: 36px;
+  font-size: 28px;
+  color: #000000;
 }
 
 /* 채팅 상자 래퍼 */
@@ -10,7 +22,7 @@ body, html {
   flex: 1 1 auto;
   display: grid; /* grid 레이아웃 사용 */
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* 반응형 열 설정 */
-  gap: 10px; /* 사진들 사이의 간격 설정 */
+  gap: 10px; /* 메시지 박스 사이 간격 */
   padding-bottom: 75px;
   list-style: none; /* 점 제거 */
   padding: 0; /* 기본 패딩 제거 */
@@ -27,13 +39,25 @@ body, html {
 /* 개별 메시지 상자 스타일 */
 .chat-box {
   width: 100%; /* 그리드 셀에 맞춰서 100%로 설정 */
-  height: 200px;
+  min-height: 150px; /* 최소 높이 설정 */
   display: flex;
   flex-flow: column nowrap;
   padding: 10px;
   border-radius: 8px 8px 0 8px;
   box-shadow: 2px 3px 5px rgba(170, 170, 170, 0.5);
   box-sizing: border-box;
+  background: #333; /* 기본 배경색 설정 */
+}
+
+.chat-box h3 {
+  margin: 0 0 5px;
+  font-size: 15px;
+  line-height: 18px;
+  font-weight: 500;
+}
+
+.chat-box p {
+  font-size: 14px;
 }
 
 .chat-box input {
@@ -86,33 +110,18 @@ body, html {
   border-radius: 10px;
 }
 
-/* 수정 버튼 래퍼 스타일 */
-.edit-btn-wrap {
-  display: flex;
-  flex-flow: column;
-  z-index: 1;
-}
-
-.edit-btn-wrap button {
-  flex: 0 0 auto;
-  width: 46px;
-  height: 25px;
-  padding: 0 10px;
-  border: none;
-  font-size: 13px;
-  font-weight: 600;
-  border-radius: 3px;
-  color: #fff;
-  cursor: pointer;
-}
-
-.edit-btn-wrap button.save-btn {
-  background: #333;
-  margin-bottom: 5px;
-}
-
-.edit-btn-wrap button.cancel-btn {
-  background: #bbb;
+/* 채팅 입력 영역 스타일 */
+.chat-input {
+  width: 100%;
+  max-width: 500px;
+  height: 80px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background: rgba(100, 100, 100, 0.8);
+  border-radius: 30px 30px 50px 50px;
+  bottom: 100px;
+  box-sizing: border-box;
 }
 
 /* 채팅 생성 영역 스타일 */
@@ -150,7 +159,7 @@ body, html {
 .chat-create.icon-wrap {
   width: 30px;
   height: 30px;
-  padding: 20px;
+  /*padding: 20px;*/
   border-radius: 50%;
   cursor: pointer;
 }
@@ -162,7 +171,7 @@ body, html {
 .chat-create form {
   flex: 0 0 auto;
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: column nowrap;
 }
 
 .input-wrap {
@@ -186,6 +195,7 @@ body, html {
   height: 20px;
   border-radius: 50%;
   margin-left: 8px;
+  list-style: none; /* 점 제거 */
   cursor: pointer;
 }
 
@@ -216,4 +226,33 @@ body, html {
 
 .color-select .color-6 {
   background: #000000;
+}
+
+/* 수정 버튼 래퍼 스타일 */
+.edit-btn-wrap {
+  display: flex;
+  flex-flow: column;
+  z-index: 1;
+}
+
+.edit-btn-wrap button {
+  flex: 0 0 auto;
+  width: 46px;
+  height: 25px;
+  padding: 0 10px;
+  border: none;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 3px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.edit-btn-wrap button.save-btn {
+  background: #333;
+  margin-bottom: 5px;
+}
+
+.edit-btn-wrap button.cancel-btn {
+  background: #bbb;
 }

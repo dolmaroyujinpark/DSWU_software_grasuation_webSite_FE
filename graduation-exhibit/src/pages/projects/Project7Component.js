@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
 import '../css/ProjectComponent.css';
-import i1 from '../../assets/i1.jpg';
-import i2 from '../../assets/i2.jpg';
-import i3 from '../../assets/i3.jpg';
-import p1 from '../../assets/p1.jpg';
-import p2 from '../../assets/p2.jpg';
-import p3 from '../../assets/p3.jpg';
-import p4 from '../../assets/p4.jpg';
-import p5 from '../../assets/p4.jpg';
+import i1 from '../../assets/team7_service1.PNG';
+import i2 from '../../assets/team7_service2.PNG';
+import i3 from '../../assets/team7_service3.PNG';
+import i4 from '../../assets/team7_service4.PNG';
+import project7_mainphoto from '../../assets/project7_mainphoto.PNG';
 
 function Project7Component() {
     const [likeCount, setLikeCount] = useState(0); // 좋아요 카운트 상태
@@ -17,26 +14,22 @@ function Project7Component() {
         {
             name: "| 안예은",
             role: "| 프론트엔드 및 알고리즘 개발",
-            ment: " 나 졸업한다 짱이지 TZA을 봐 대박임 ( •̀ω•́ )و✧",
-            photo: p1,
+            ment: " 나 졸업한다 짱이지<br> TZA을 봐 대박임 ( •̀ω•́ )و✧"
         },
         {
             name: "| 이규빈",
             role: "| 데이터베이스 구축 및 서버 프로그래밍",
-            ment: "수고했어 말랑이들∿ ෆ",
-            photo: p2,
+            ment: "수고했어 말랑이들∿ ෆ"
         },
         {
             name: "| 정수현",
             role: "| 모바일 프로그래밍",
-            ment: "말랑이들 수고했다,,",
-            photo: p3,
+            ment: "말랑이들 수고했다,,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🌸축🎉<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;졸&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;업<br>┏☆┓┏★┓┏☆┓┏★┓┏☆┓┏★┓┏☆┓┏ ★ ┓<br>┃정┃┃수┃┃현┃┃대┃┃학┃┃생┃┃활┃┃-완-┃<br>┗♧┛┗♡┛┗♧┛┗♡┛┗♧┛┗♡┛┗♧┛┗ ♡ ┛<br>"
         },
         {
             name: "| 김희수",
             role: "| 프론트엔드 및 UI/UX 디자인",
-            ment: "말랑이들 수고했엉 최고얌🍀이제 졸업이다~ ʸᵉᵃʰ( ᐛ✌)",
-            photo: p4,
+            ment: "말랑이들 수고했엉 최고얌🍀<br>이제 졸업이다~ ʸᵉᵃʰ( ᐛ✌)"
         }
     ];
 
@@ -58,9 +51,10 @@ function Project7Component() {
                 <h1>ㅣ말랑이들</h1>
             </div>
             <div className="images">
-                <div className="photo" style={{ backgroundImage: `url(${i1})` }}></div>
-                <div className="photo" style={{ backgroundImage: `url(${i2})` }}></div>
-                <div className="photo" style={{ backgroundImage: `url(${i3})` }}></div>
+                <img src={i1} alt="service1" className="photo" />
+                <img src={i2} alt="service2" className="photo" />
+                <img src={i3} alt="service3" className="photo" />
+                <img src={i4} alt="service4" className="photo" />
             </div>
             <hr className="divider" />
             <div className="App-header">
@@ -115,15 +109,17 @@ function Project7Component() {
             <div className="App-header">
                 <h1>ㅣDEVELOPERS</h1>
             </div>
+            <div className="main-photo">
+                <img src={project7_mainphoto} alt="Main" className="main-photo-img" />
+            </div> {/* 큰 이미지 */}
 
-            <div className="developer-list">
+            <div className="developer-list-2">
                 {developers.map((developer, index) => (
-                    <div className="developer-card" key={index}>
-                        <div className="photo" style={{ backgroundImage: `url(${developer.photo})` }}></div>
+                    <div className="developer-card-2" key={index}>
                         <div className="info">
-                            <p>{developer.name}</p>
-                            <p>{developer.role}</p>
-                            <p>{developer.ment}</p>
+                            <p className="name">{developer.name}</p>
+                            <p className="role">{developer.role}</p>
+                            <p className="ment" dangerouslySetInnerHTML={{ __html: developer.ment }}></p>
                         </div>
                     </div>
                 ))}

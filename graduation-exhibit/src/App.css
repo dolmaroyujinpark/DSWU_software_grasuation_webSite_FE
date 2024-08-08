@@ -1,10 +1,11 @@
 /* src/App.css */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
 
 /* 기본 스타일 */
 body, html {
   margin: 0;
   overflow-x: hidden; /* 가로 스크롤 숨기기 */
-  font-family: Arial, sans-serif;
+  font-family: system-ui;
   padding: 0;
 }
 
@@ -16,10 +17,6 @@ header, footer {
   background-color: #282c34;
   padding: 20px;
   color: white;
-}
-
-section {
-  border: none;
 }
 
 nav a {
@@ -40,14 +37,23 @@ h3 {
   margin: 10px 0;
 }
 
-#projects, #guest, #designers {
+#projects, #guest {
   background-color: #000000;
   color: white;
   border: none;
+}
+
+#designers {
+  background-color: #000000;
+  color: white;
 }
 
 #about, #professors, #pics {
   background-color: #ffffff;
   color: black;
   border: none;
+}
+
+.comment-box {
+  border-radius: 12px;
 }

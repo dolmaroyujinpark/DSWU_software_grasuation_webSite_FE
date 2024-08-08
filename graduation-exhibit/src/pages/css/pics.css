@@ -1,59 +1,66 @@
 /* src/styles/Pics.css */
 
 .photo-gallery {
-    display: flex;
-    flex-wrap: wrap; /* 화면 크기에 따라 줄 바꿈 허용 */
-    justify-content: center; /* 가운데 정렬 */
-    gap: 10px; /* 사진들 사이의 간격 설정 */
-    margin-bottom: 20px; /* 페이지네이션과의 간격 설정 */
-  }
-  
+  display: flex;
+  flex-wrap: wrap;
+  /* 화면 크기에 따라 줄 바꿈 허용 */
+  justify-content: center;
+  /* 가운데 정렬 */
+  gap: 10px;
+  /* 사진들 사이의 간격 설정 */
+  margin-bottom: 20px;
+  /* 페이지네이션과의 간격 설정 */
+}
+
+.photo-gallery .photo_pics {
+  flex: 1 1 calc(25% - 20px);
+  /* 사진을 4등분으로 나누고, 간격을 고려하여 크기 설정 */
+  max-width: calc(25% - 20px);
+  /* 최대 너비를 25%로 설정 */
+  height: auto;
+  /* 높이는 자동 조절 */
+  object-fit: cover;
+  /* 이미지 비율 유지 */
+}
+
+/* 화면 크기가 작은 경우 사진의 너비를 50%로 조정 */
+@media (max-width: 768px) {
   .photo-gallery .photo_pics {
-    flex: 1 1 calc(25% - 20px); /* 사진을 4등분으로 나누고, 간격을 고려하여 크기 설정 */
-    max-width: calc(25% - 20px); /* 최대 너비를 25%로 설정 */
-    height: auto; /* 높이는 자동 조절 */
-    object-fit: cover; /* 이미지 비율 유지 */
+    flex: 1 1 calc(50% - 20px);
+    /* 사진을 2등분으로 나누고, 간격을 고려하여 크기 설정 */
+    max-width: calc(50% - 20px);
+    /* 최대 너비를 50%로 설정 */
   }
-  
-  /* 화면 크기가 작은 경우 사진의 너비를 50%로 조정 */
-  @media (max-width: 768px) {
-    .photo-gallery .photo_pics {
-      flex: 1 1 calc(50% - 20px); /* 사진을 2등분으로 나누고, 간격을 고려하여 크기 설정 */
-      max-width: calc(50% - 20px); /* 최대 너비를 50%로 설정 */
-    }
-  }
-  
-  /* 화면 크기가 더 작은 경우 사진의 너비를 100%로 조정 */
-  @media (max-width: 480px) {
-    .photo-gallery .photo_pics {
-      flex: 1 1 calc(100% - 20px); /* 사진을 전체 너비로 설정하고, 간격을 고려하여 크기 설정 */
-      max-width: calc(100% - 20px); /* 최대 너비를 100%로 설정 */
-    }
-  }
-  
-  /* 페이지네이션 */
+}
+
+/* 페이지네이션 */
 .pagination {
-    display: flex;
-    justify-content: center; /* 가운데 정렬 */
-    margin-top: 20px; /* 위쪽 간격 설정 */
-  }
-  
-  .pagination-button {
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    margin: 0 5px; /* 버튼 간격 설정 */
-  }
-  
-  .pagination-button.active {
-    color: black; /* 활성화된 버튼 색상 */
-  }
-  
-  .pagination-button:not(.active) {
-    color: grey; /* 비활성화된 버튼 색상 */
-  }
-  
-  .pagination-button:focus {
-    outline: none;
-  }
+  display: flex;
+  justify-content: center;
+  /* 가운데 정렬 */
+  margin-top: 20px;
+  /* 위쪽 간격 설정 */
+}
+
+.pagination-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  margin: 0 5px;
+  /* 버튼 간격 설정 */
+}
+
+.pagination-button.active {
+  color: black;
+  /* 활성화된 버튼 색상 */
+}
+
+.pagination-button:not(.active) {
+  color: grey;
+  /* 비활성화된 버튼 색상 */
+}
+
+.pagination-button:focus {
+  outline: none;
+}

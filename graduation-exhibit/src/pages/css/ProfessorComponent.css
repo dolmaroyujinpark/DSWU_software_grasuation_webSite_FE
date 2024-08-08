@@ -49,3 +49,72 @@
 .professor-video video {
   width: 100%;
 }
+
+/* 화면 크기 대 (900px 이상) */
+@media (min-width: 900px) {
+  .professor-title {
+    font-size: 28px; /* 큰 화면에서 제목 크기 조정 */
+    margin-left: calc(50% - 400px); /* 기본 마진 설정 */
+  }
+
+  .professor-image {
+    height: 400px; /* 큰 화면에서 이미지 세로 길이 유지 */
+    max-width: 300px; /* 큰 화면에서 이미지 최대 너비 유지 */
+  }
+}
+
+/* 화면 크기 중 (500px ~ 899px) */
+@media (max-width: 899px) and (min-width: 500px) {
+  .professor-title {
+    font-size: 22px; /* 중간 화면에서 제목 크기 조정 */
+    margin-left: 20px; /* 마진 조정 */
+  }
+
+  .professor-content {
+    flex-direction: column; /* 세로 정렬로 변경 */
+    align-items: center; /* 가운데 정렬 */
+  }
+
+  .professor-image {
+    height: auto; /* 이미지 높이를 자동으로 조정 */
+    max-width: 80%; /* 이미지 최대 너비 조정 */
+    margin-right: 0; /* 오른쪽 마진 제거 */
+    margin-bottom: 10px; /* 이미지와 텍스트 사이의 간격 추가 */
+  }
+
+  .professor-text {
+    width: 100%; /* 텍스트 영역 너비를 100%로 조정 */
+  }
+
+  .professor-video {
+    max-width: 100%; /* 동영상 최대 너비 조정 */
+  }
+}
+
+/* 화면 크기 소 (500px 이하) */
+@media (max-width: 500px) {
+  .professor-title {
+    font-size: 18px; /* 작은 화면에서 제목 크기 조정 */
+    margin-left: 10px; /* 왼쪽 마진 조정 */
+  }
+
+  .professor-content {
+    flex-direction: column; /* 세로 정렬로 변경 */
+    align-items: center; /* 가운데 정렬 */
+  }
+
+  .professor-image {
+    height: auto; /* 이미지 높이를 자동으로 조정 */
+    max-width: 100%; /* 이미지 최대 너비 조정 */
+    margin-right: 0; /* 오른쪽 마진 제거 */
+    margin-bottom: 10px; /* 이미지와 텍스트 사이의 간격 추가 */
+  }
+
+  .professor-text {
+    width: 100%; /* 텍스트 영역 너비를 100%로 조정 */
+  }
+
+  .professor-video {
+    max-width: 100%; /* 동영상 최대 너비 조정 */
+  }
+}

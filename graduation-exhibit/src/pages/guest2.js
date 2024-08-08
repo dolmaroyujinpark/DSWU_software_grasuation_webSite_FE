@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import dayjs from 'dayjs';
 import { ReactComponent as CreateIcon } from '../assets/pencil.svg';
 import ChatItem from '../components/guest/chatItem';
@@ -11,6 +11,10 @@ function GuestPage() {
     const [body, setBody] = useState('');
     const [data, setData] = useState([]);
     const reverse = [...data].reverse();
+    const [color, setColor] = useState('#ffffff');
+    const [Create, setCreate] = useState(false);
+
+    const chatCreateRef = useRef(null); // Create a ref for chat-create
 
     useEffect(() => {
         fetch('http://localhost:4000/guest2')
@@ -18,10 +22,22 @@ function GuestPage() {
             .then((data) => {
                 setData(data);
             });
-    }, []);
 
-    const [color, setColor] = useState('#ffffff');
-    const [Create, setCreate] = useState(false);
+        // Event handler to close chat-create when clicking outside
+        function handleClickOutside(event) {
+            if (chatCreateRef.current && !chatCreateRef.current.contains(event.target)) {
+                setCreate(false);
+            }
+        }
+
+        // Add event listener on mount
+        document.addEventListener('mousedown', handleClickOutside);
+
+        // Cleanup event listener on unmount
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
 
     const toggleCreate = () => setCreate(!Create);
 
@@ -88,7 +104,10 @@ function GuestPage() {
                     )}
                 </ul>
                 <div className="create-wrap">
-                    <div className={`chat-create ${Create ? 'input-wrap' : 'icon-wrap'}`}>
+                    <div
+                        className={`chat-create ${Create ? 'input-wrap' : 'icon-wrap'}`}
+                        ref={chatCreateRef} // Attach ref to chat-create
+                    >
                         {Create ? (
                             <form onSubmit={onSubmit}>
                                 <div className="input-wrap">
@@ -107,7 +126,7 @@ function GuestPage() {
                                         />
                                     </div>
                                     <ul className="color-select">
-                                        <li className="color-1" onClick={() => setColor('#cccccc')} />
+                                        <li className="color-1" onClick={() => setColor('#ededed')} />
                                         <li className="color-2" onClick={() => setColor('#bebebe')} />
                                         <li className="color-3" onClick={() => setColor('#999999')} />
                                         <li className="color-4" onClick={() => setColor('#666666')} />

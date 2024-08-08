@@ -27,7 +27,7 @@
   color: #ffffff;
 }
 
-.header h1, a {
+.title-link, h1 {
   margin-left: 20px;
   text-align: left;
   color: inherit;

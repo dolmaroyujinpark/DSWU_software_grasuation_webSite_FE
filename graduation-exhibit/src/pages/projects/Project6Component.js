@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import '../css/ProjectComponent.css';
-import i1 from '../../assets/i1.jpg';
-import i2 from '../../assets/i2.jpg';
-import i3 from '../../assets/i3.jpg';
-import p1 from '../../assets/p1.jpg';
-import p2 from '../../assets/p2.jpg';
-import p3 from '../../assets/p3.jpg';
-import p4 from '../../assets/p4.jpg';
-import p5 from '../../assets/p4.jpg';
+import i1 from '../../assets/team6_service1.jpg';
+import i2 from '../../assets/team6_service2.jpg';
+import i3 from '../../assets/team6_service4.jpg';
+import i4 from '../../assets/team6_service4.jpg';
+import i5 from '../../assets/team6_service5.png';
+import project6_mainphoto from '../../assets/project6_mainphoto.jpg';
 
 function Project6Component() {
     const [likeCount, setLikeCount] = useState(0); // 좋아요 카운트 상태
@@ -17,31 +15,27 @@ function Project6Component() {
         {
             name: "| 경다은",
             role: "| AR 실외 메모, AR 게임, AR 퀴즈",
-            ment: " 프로젝트 중에는 힘들고 지쳤던 순간들이 많았는데 끝나고 돌아보니 팀원들과 함께 웃고, 버그를 잡고 기뻐했던 순간들만 기억에 남아요.힘들었던 기억을 소중하고 즐거운 추억으로 바꿔준 팀원분들 고맙고 사랑합니다♡ 캡스톤 수업을 참여하며 희로애락을 함께했던 덕우 분들, 여러분의 앞길이 꽃으로 가득하길 바랄게요!", photo: p1,
+            ment: " 프로젝트 중에는 힘들고 지쳤던 순간들이 많았는데 끝나고 돌아보니 팀원들과 함께 웃고, 버그를 잡고 기뻐했던 순간들만 기억에 남아요.힘들었던 기억을 소중하고 즐거운 추억으로 바꿔준 팀원분들 고맙고 사랑합니다♡ 캡스톤 수업을 참여하며 희로애락을 함께했던 덕우 분들, 여러분의 앞길이 꽃으로 가득하길 바랄게요!"
         },
         {
             name: "| 김가윤",
             role: "| AR 실내 메모, AR 게임",
-            ment: "두 학기에 걸쳐 달려온 프로젝트를 잘 마무리 할 수 있어 기쁩니다. 지도해주신 강지헌 교수님, 함께 노력한 팀원들, 그리고 다방면으로 돌봐준 수, 완, 홍에게도 감사의 인사를 전합니다.",
-            photo: p2,
+            ment: "두 학기에 걸쳐 달려온 프로젝트를 잘 마무리 할 수 있어 기쁩니다. 지도해주신 강지헌 교수님, 함께 노력한 팀원들, 그리고 다방면으로 돌봐준 수, 완, 홍에게도 감사의 인사를 전합니다."
         },
         {
             name: "| 서윤수",
             role: "| 안드로이드, AR 게임 모델링",
-            ment: "개발 꼬꼬마로 참여하여 뜻깊었고, 코드로 세상을 바꾸는 개발자로 성장하고 싶습니다.",
-            photo: p3,
+            ment: "개발 꼬꼬마로 참여하여 뜻깊었고, 코드로 세상을 바꾸는 개발자로 성장하고 싶습니다."
         },
         {
             name: "| 전은채",
             role: "| AR 실내 메모, AR 물건메모, AR 길찾기, 안드로이드",
-            ment: "1년 동안 수고 많았고 앞으로도 파이팅",
-            photo: p4,
+            ment: "1년 동안 수고 많았고 앞으로도 파이팅"
         },
         {
             name: "| 오다은",
             role: "| AR 실외 메모, AR물건메모, AR 길찾기",
-            ment: " 1년 동안의 프로젝트를 통해 많은 것을 배울 수 있는 시간이었습니다. 함께한 팀원과 교수님 감사드립니다.",
-            photo: p4,
+            ment: " 1년 동안의 프로젝트를 통해 많은 것을 배울 수 있는 시간이었습니다. 함께한 팀원과 교수님 감사드립니다."
         }
     ];
 
@@ -63,9 +57,11 @@ function Project6Component() {
                 <h1>ㅣCodeDuck(코드덕)</h1>
             </div>
             <div className="images">
-                <div className="photo" style={{ backgroundImage: `url(${i1})` }}></div>
-                <div className="photo" style={{ backgroundImage: `url(${i2})` }}></div>
-                <div className="photo" style={{ backgroundImage: `url(${i3})` }}></div>
+                <img src={i1} alt="service1" className="photo" />
+                <img src={i2} alt="service2" className="photo" />
+                <img src={i3} alt="service3" className="photo" />
+                <img src={i4} alt="service4" className="photo" />
+                <img src={i5} alt="service4" className="photo" />
             </div>
             <hr className="divider" />
             <div className="App-header">
@@ -107,7 +103,7 @@ function Project6Component() {
                 <div className="description-content">
                     <p>Skill |  Kotlin, C#, Python, SQLite, etc.</p>
                     <p>Tool | Android Studio, Unity, Photon, GitHub,Django, etc.</p>
-                    <p>Device| Android Phone (API Level 24 and above), Google Cloud Platform(GCP)</p>
+                    <p>Device | Android Phone (API Level 24 and above), Google Cloud Platform(GCP)</p>
                 </div>
             </div>
 
@@ -123,15 +119,17 @@ function Project6Component() {
             <div className="App-header">
                 <h1>ㅣDEVELOPERS</h1>
             </div>
+            <div className="main-photo">
+                <img src={project6_mainphoto} alt="Main" className="main-photo-img" />
+            </div> {/* 큰 이미지 */}
 
-            <div className="developer-list">
+            <div className="developer-list-2">
                 {developers.map((developer, index) => (
-                    <div className="developer-card" key={index}>
-                        <div className="photo" style={{ backgroundImage: `url(${developer.photo})` }}></div>
+                    <div className="developer-card-2" key={index}>
                         <div className="info">
-                            <p>{developer.name}</p>
-                            <p>{developer.role}</p>
-                            <p>{developer.ment}</p>
+                            <p className="name">{developer.name}</p>
+                            <p className="role">{developer.role}</p>
+                            <p className="ment">{developer.ment}</p>
                         </div>
                     </div>
                 ))}

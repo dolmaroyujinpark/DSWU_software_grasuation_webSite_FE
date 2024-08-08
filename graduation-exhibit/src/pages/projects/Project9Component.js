@@ -1,64 +1,60 @@
 import React, { useState } from 'react';
 import '../css/ProjectComponent.css';
-import i1 from '../../assets/i1.jpg';
-import i2 from '../../assets/i2.jpg';
-import i3 from '../../assets/i3.jpg';
-import p1 from '../../assets/p1.jpg';
-import p2 from '../../assets/p2.jpg';
-import p3 from '../../assets/p3.jpg';
-import p4 from '../../assets/p4.jpg';
+import i1 from '../../assets/team9_service1.png';
+import i2 from '../../assets/team9_service2.png';
+import i3 from '../../assets/team9_service3.png';
+import i4 from '../../assets/team9_service4.png';
+import project9_mainphoto from '../../assets/project9_mainphoto.jpg';
 
 function Project9Component() {
-    const [likeCount, setLikeCount] = useState(0); // 좋아요 카운트 상태
-    const [liked, setLiked] = useState(false); // 좋아요 상태
+  const [likeCount, setLikeCount] = useState(0); // 좋아요 카운트 상태
+  const [liked, setLiked] = useState(false); // 좋아요 상태
 
-    const developers = [
-        {
-          name: "| 김도영",
-          role: "| 데이터 수집 및 분류, 모바일 프로그래밍, 추천 알고리즘 설계",
-          ment: "캡스톤 프로젝트를 하는 동안 팀원들과 함께 여러 과정에서 다양한 시행착오를 경험하며 많이 성장하고 이해할 수 있는 기회를 가지게 되어 의미 있었습니다! 팀에게 많은 조언과 마 음을 주신 이재호 교수님께 감사드립니다.",
-          photo: p1,
-        },
-        {
-          name: "| 김이슬",
-          role: "| 서버 프로그래밍, 모바일 프로그래밍, 데이터베이스 설계 및 구축",
-          ment: "프로젝트를 진행하면서 수많은 역경이 있었지만 이로 인해 많은 걸 배우고 성장하는 계기가 되었습니다. 그리고 1년 동 안 함께해 준 팀원분들과 많은 조언을 주신 교수님께 감사드립니다.",
-          photo: p2,
-        },
-        {
-          name: "| 신수영",
-          role: "| 딥러닝 데이터 수집 및 모델 학습 (Kobert, pytorch)",
-          ment: "1년이 넘는 시간동안 프로젝트를 진행하면서 기획부터 개발까지 모든 과정을 경험해본 뜻깊은 시간이었습니다. 함께 팀 프로젝트를 하면서 소통과 협력의 중요성을 알게 되었습니다. 팀원들 모두와 지도 교수님이신 이재호 교수님께 감사드립니다.",
-          photo: p3,
-        },
-        {
-          name: "| 안성하",
-          role: "| 음악 데이터 수집 및 가공, 알고리즘 설계 및 구현",
-          ment: "프로젝트를 함께 해주신 조원들과 교수님께 진심으로 감사 드립니다. 이번 경험을 통해 많은 것을 배울 수 있었습니다.",
-          photo: p4,
-        },
-      ];
+  const developers = [
+    {
+      name: "| 김도영",
+      role: "| 데이터 수집 및 분류, 모바일 프로그래밍, 추천 알고리즘 설계",
+      ment: "캡스톤 프로젝트를 하는 동안 팀원들과 함께 여러 과정에서 다양한 시행착오를 경험하며 많이 성장하고 이해할 수 있는 기회를 가지게 되어 의미 있었습니다! 팀에게 많은 조언과 마 음을 주신 이재호 교수님께 감사드립니다."
+    },
+    {
+      name: "| 김이슬",
+      role: "| 서버 프로그래밍, 모바일 프로그래밍, 데이터베이스 설계 및 구축",
+      ment: "프로젝트를 진행하면서 수많은 역경이 있었지만 이로 인해 많은 걸 배우고 성장하는 계기가 되었습니다. 그리고 1년 동 안 함께해 준 팀원분들과 많은 조언을 주신 교수님께 감사드립니다."
+    },
+    {
+      name: "| 신수영",
+      role: "| 딥러닝 데이터 수집 및 모델 학습 (Kobert, pytorch)",
+      ment: "1년이 넘는 시간동안 프로젝트를 진행하면서 기획부터 개발까지 모든 과정을 경험해본 뜻깊은 시간이었습니다. 함께 팀 프로젝트를 하면서 소통과 협력의 중요성을 알게 되었습니다. 팀원들 모두와 지도 교수님이신 이재호 교수님께 감사드립니다."
+    },
+    {
+      name: "| 안성하",
+      role: "| 음악 데이터 수집 및 가공, 알고리즘 설계 및 구현",
+      ment: "프로젝트를 함께 해주신 조원들과 교수님께 진심으로 감사 드립니다. 이번 경험을 통해 많은 것을 배울 수 있었습니다."
+    },
+  ];
 
-    // 버튼 클릭 핸들러
-    const handleButtonClick = () => {
-        if (liked) {
-            setLikeCount(likeCount - 1); // 좋아요 카운트 감소
-            setLiked(false); // 좋아요 상태 해제
-        } else {
-            setLikeCount(likeCount + 1); // 좋아요 카운트 증가
-            setLiked(true); // 좋아요 상태 설정
-        }
-    };
+  // 버튼 클릭 핸들러
+  const handleButtonClick = () => {
+    if (liked) {
+      setLikeCount(likeCount - 1); // 좋아요 카운트 감소
+      setLiked(false); // 좋아요 상태 해제
+    } else {
+      setLikeCount(likeCount + 1); // 좋아요 카운트 증가
+      setLiked(true); // 좋아요 상태 설정
+    }
+  };
 
-    return (
-        <div className="AppComp">
-            <div className="App-header">
-        <h1>ㅣ프로젝트명 - 팀명</h1>
+  return (
+    <div className="AppComp">
+      <div className="App-header">
+        <h1>ㅣ그날의 감정을 기록하고 음악을 추천받는 어플리케이션:D-ONE</h1>
+        <h1>ㅣD-ONE</h1>
       </div>
       <div className="images">
-        <div className="photo" style={{ backgroundImage: `url(${i1})` }}></div>
-        <div className="photo" style={{ backgroundImage: `url(${i2})` }}></div>
-        <div className="photo" style={{ backgroundImage: `url(${i3})` }}></div>
+        <img src={i1} alt="service1" className="photo" />
+        <img src={i2} alt="service2" className="photo" />
+        <img src={i3} alt="service3" className="photo" />
+        <img src={i4} alt="service4" className="photo" />
       </div>
       <hr className="divider" />
       <div className="App-header">
@@ -102,36 +98,38 @@ function Project9Component() {
         <div className="description-content">
           <p>Skill | JAVA, PHP, MySQL, PyTorch, Python, Flask</p>
           <p>Tool | Visual Studio Code, AndroidStudio, AWS EC2 </p>
-          <p>Device| Android Phone</p>
+          <p>Device | Android Phone</p>
         </div>
       </div>
 
-            {/* 타원형 박스와 하트 버튼 */}
-            <div className={`oval-box ${liked ? 'liked' : ''}`} onClick={handleButtonClick}>
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></link>
-                <i className="fas fa-heart heart-icon"></i>
-                <span className="like-count">{likeCount}개 </span>
-            </div>
-            <hr className="divider" />
+      {/* 타원형 박스와 하트 버튼 */}
+      <div className={`oval-box ${liked ? 'liked' : ''}`} onClick={handleButtonClick}>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></link>
+        <i className="fas fa-heart heart-icon"></i>
+        <span className="like-count">{likeCount}개 </span>
+      </div>
+      <hr className="divider" />
 
-            <div className="App-header">
-                <h1>ㅣDEVELOPERS</h1>
-            </div>
+      <div className="App-header">
+        <h1>ㅣDEVELOPERS</h1>
+      </div>
+      <div className="main-photo">
+        <img src={project9_mainphoto} alt="Main" className="main-photo-img" />
+      </div> {/* 큰 이미지 */}
 
-            <div className="developer-list">
-                {developers.map((developer, index) => (
-                    <div className="developer-card" key={index}>
-                        <div className="photo" style={{ backgroundImage: `url(${developer.photo})` }}></div>
-                        <div className="info">
-                            <p>{developer.name}</p>
-                            <p>{developer.role}</p>
-                            <p>{developer.ment}</p>
-                        </div>
-                    </div>
-                ))}
+      <div className="developer-list-2">
+        {developers.map((developer, index) => (
+          <div className="developer-card-2" key={index}>
+            <div className="info">
+              <p className="name">{developer.name}</p>
+              <p className="role">{developer.role}</p>
+              <p className="ment">{developer.ment}</p>
             </div>
-        </div>
-    );
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 }
 
 export default Project9Component;

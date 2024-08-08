@@ -2,44 +2,68 @@
 
 /* 디자이너 콘텐츠 */
 .designers-content {
-    display: flex;
-    flex-wrap: wrap; /* 화면 크기에 따라 줄 바꿈 허용 */
-    gap: 20px; /* 왼쪽과 오른쪽 사이의 간격 */
-    align-items: stretch; /* 자식 요소의 높이 동일하게 설정 */
-    margin-top: 40px; /* 위쪽 마진을 40px로 설정 */
+  display: flex;
+  flex-wrap: wrap;
+  /* 화면 크기에 따라 줄 바꿈 허용 */
+  gap: 20px;
+  /* 왼쪽과 오른쪽 사이의 간격 */
+  align-items: stretch;
+  /* 자식 요소의 높이 동일하게 설정 */
+}
+
+.designers-text-content {
+  flex: 3;
+  /* 텍스트 컨텐츠는 3 비율 */
+  padding: 20px;
+}
+
+.designers-image-content {
+  flex: 2;
+  /* 이미지 컨텐츠는 2 비율 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  overflow: hidden;
+  /* 이미지가 부모 요소를 넘어서지 않도록 설정 */
+}
+
+.designers-image-content img {
+  max-width: 90%;
+  /* 이미지 최대 너비를 부모 요소의 90%로 설정 */
+  max-height: 90%;
+  /* 이미지 최대 높이를 부모 요소의 90%로 설정 */
+  width: auto;
+  /* 너비 자동 조절 */
+  height: auto;
+  /* 높이 자동 조절 */
+  object-fit: contain;
+  /* 이미지 비율 유지하며 부모 요소 안에 맞추기 */
+}
+
+.designers-text-content h2,
+.designers-text-content p {
+  font-size: 1.3em;
+  /* 텍스트 크기를 기본 크기의 1.5배로 설정 */
+  margin: 10px 0;
+  /* 텍스트 간의 간격 설정 */
+  line-height: 2;
+}
+
+.greenName {
+  color: rgb(156, 255, 141);
+}
+
+/* 반응형 디자인 */
+@media (max-width: 899px) {
+  .designers-content {
+    flex-direction: column;
+    /* 텍스트와 이미지를 세로로 배치 */
   }
-  
-  .designers-text-content {
-    flex: 3; /* 텍스트 컨텐츠는 3 비율 */
-    padding: 20px;
+
+  .designers-text-content h2,
+  .designers-text-content p {
+    font-size: 1.15em;
+    /* 텍스트 크기를 1.2em으로 줄임 */
   }
-  
-  .designers-image-content {
-    flex: 2; /* 이미지 컨텐츠는 2 비율 */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    overflow: hidden; /* 이미지가 부모 요소를 넘어서지 않도록 설정 */
-  }
-  
-  .designers-image-content img {
-    max-width: 90%; /* 이미지 최대 너비를 부모 요소의 90%로 설정 */
-    max-height: 90%; /* 이미지 최대 높이를 부모 요소의 90%로 설정 */
-    width: auto; /* 너비 자동 조절 */
-    height: auto; /* 높이 자동 조절 */
-    object-fit: contain; /* 이미지 비율 유지하며 부모 요소 안에 맞추기 */
-  }
-  
-  .designers-text-content h2, .designers-text-content p {
-    font-size: 1.5em; /* 텍스트 크기를 기본 크기의 1.5배로 설정 */
-    margin: 10px 0; /* 텍스트 간의 간격 설정 */
-  }
-  
-  /* 반응형 디자인 */
-  @media (max-width: 768px) {
-    .designers-content {
-      flex-direction: column; /* 텍스트와 이미지를 세로로 배치 */
-    }
-  }
-  
+}

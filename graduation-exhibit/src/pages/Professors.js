@@ -1,10 +1,10 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import photo_pro1 from '../assets/professor.jpg';
-import photo_pro2 from '../assets/professor.jpg';
-import photo_pro3 from '../assets/professor.jpg';
-import photo_pro4 from '../assets/professor.jpg';
-import './css/Professors.css'; // CSS 파일 추가
+import React from "react";
+import { Link } from "react-router-dom";
+import photo_pro1 from "../assets/professor.jpg";
+import photo_pro2 from "../assets/professor.jpg";
+import photo_pro3 from "../assets/professor.jpg";
+import photo_pro4 from "../assets/professor.jpg";
+import "./css/Professors.css"; // CSS 파일 추가
 
 function Professors() {
   return (
@@ -22,6 +22,9 @@ function Professors() {
         </Link>
         <Link to="/professor4">
           <img src={photo_pro4} alt="Professor 4" className="photo_pro" />
+        </Link>
+        <Link to="/professor5">
+          <img src={photo_pro4} alt="Professor 5" className="photo_pro" />
         </Link>
       </div>
     </section>

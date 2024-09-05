@@ -46,10 +46,6 @@
   /* 동영상 최대 너비 */
 }
 
-.professor-video video {
-  width: 100%;
-}
-
 /* 화면 크기 대 (900px 이상) */
 @media (min-width: 900px) {
   .professor-title {

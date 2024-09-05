@@ -25,7 +25,7 @@ const Header = () => {
     const observerCallback = (entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          if (entry.target.id === 'projects' || entry.target.id === 'guest' || entry.target.id === 'designers') {
+          if (entry.target.id === 'projects' || entry.target.id === 'designers') {
             header.classList.remove('light');
             header.classList.add('dark');
           } else {
@@ -101,7 +101,7 @@ const Header = () => {
             <li className="nav-item"><a href="#about" onClick={handleNavLinkClick}>About</a></li>
             <li className="nav-item"><a href="#projects" onClick={handleNavLinkClick}>Projects</a></li>
             <li className="nav-item"><a href="#professors" onClick={handleNavLinkClick}>Professors</a></li>
-            <li className="nav-item"><a href="#guest" onClick={handleNavLinkClick}>Guest</a></li>
+            {/* <li className="nav-item"><a href="#guest" onClick={handleNavLinkClick}>Guest</a></li> */}
             <li className="nav-item"><a href="#pics" onClick={handleNavLinkClick}>Pics</a></li>
             <li className="nav-item"><a href="#designers" onClick={handleNavLinkClick}>Design</a></li>
           </ul>
@@ -111,7 +111,7 @@ const Header = () => {
             <li><a href="#about" onClick={handleNavLinkClick}>About</a></li>
             <li><a href="#projects" onClick={handleNavLinkClick}>Projects</a></li>
             <li><a href="#professors" onClick={handleNavLinkClick}>Professors</a></li>
-            <li><a href="#guest" onClick={handleNavLinkClick}>Guest</a></li>
+            {/* <li><a href="#guest" onClick={handleNavLinkClick}>Guest</a></li> */}
             <li><a href="#pics" onClick={handleNavLinkClick}>Pics</a></li>
             <li><a href="#designers" onClick={handleNavLinkClick}>Design</a></li>
           </ul>
